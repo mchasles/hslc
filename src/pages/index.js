@@ -1,6 +1,23 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+import Menu from '../components/menu';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    background-color: #e6e6e6;
+  }
+
+  nav, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+`;
 
 const Wrapper = styled.section`
   background: papayawhip;
@@ -22,6 +39,6 @@ export default () => (
         content="Hetre sous le charme, Cabanes, perchees, arbres, Correze, Dordogne, hetresouslecharme.com, location, cabane, arbre, Le Bourg, Saint Martial, Entraygues, vacances, nature."
       />
     </Helmet>
-    <Wrapper>Hello world!</Wrapper>
+      <GlobalStyle />
   </>
 );
