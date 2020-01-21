@@ -3,7 +3,8 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
 import Img from 'gatsby-image';
-import Menu from '../components/menu';
+import Menu from '../components/Menu';
+import Panoramic from '../components/Panoramic';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -14,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     background-color: #e6e6e6;
-    -webkit-overflow-scrolling: auto;
+    
   }
 
   nav, ul {
@@ -22,10 +23,20 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     list-style: none;
   }
+
 `;
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
   background: rgb(255, 255, 255);
+`;
+
+const Section = styled.section`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 `;
 
 const BgImg = styled(Img)`
@@ -55,48 +66,27 @@ export default ({ data }) => {
       </Helmet>
       <Wrapper>
         <GlobalStyle />
-        <LogoImg
-          fixed={logoImg}
-          fadeIn={false}
-          durationFadeIn={50000}
-          style={{ position: 'absolute' }}
-        />
-        <BgImg fluid={bgImg} durationFadeIn={2000} />
         <Menu>
           {titles.map(({ value }) => (
             <Menu.item>
-              <Menu.link>{value}</Menu.link>
+              <Menu.link href={`#${value.replace(/\s+/g, '-').toLowerCase()}`}>
+                {value}
+              </Menu.link>
             </Menu.item>
           ))}
         </Menu>
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
-        fr
-        <br />
+        <Section id="nos-cabanes">
+          <LogoImg
+            fixed={logoImg}
+            fadeIn={false}
+            durationFadeIn={50000}
+            style={{ position: 'absolute' }}
+          />
+          <BgImg fluid={bgImg} durationFadeIn={2000} />
+        </Section>
+        <Section id="prestations">
+          <Panoramic />
+        </Section>
       </Wrapper>
     </>
   );
