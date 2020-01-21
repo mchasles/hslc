@@ -5,16 +5,26 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Img from 'gatsby-image';
 import Menu from '../components/Menu';
 import Panoramic from '../components/Panoramic';
+import Cabin from '../components/Cabin';
+import fontFiles from '../fonts';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Pintgram Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Pintgram Regular'), url(${fontFiles.PintgramRegular}) format('woff');
+  }
+
   html {
     background-color: rgba(0, 0, 0);
   }
+
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
-    background-color: #e6e6e6;
+    background-color: rgb(230, 230, 230);
     
   }
 
@@ -82,11 +92,14 @@ export default ({ data }) => {
             durationFadeIn={50000}
             style={{ position: 'absolute' }}
           />
-          <BgImg fluid={bgImg} durationFadeIn={2000} />
+          <BgImg fluid={bgImg} durationFadeIn={4000} />
         </Section>
         <Section id="prestations">
           <Panoramic />
         </Section>
+        <Cabin />
+        <Cabin reverse />
+        <Cabin />
       </Wrapper>
     </>
   );
