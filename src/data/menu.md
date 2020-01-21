@@ -7,6 +7,6 @@ date: '2020-01-20'
 
 # Prestations
 
-# Qui sommes nous
+# Qui sommes nous ?
 
-# Nos cabanes
+# Infos pratiques

@@ -1,20 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Nav = styled.nav`
+  position: fixed;
+  top: 0;
+`;
+
 const Wrapper = styled.ul`
+  box-sizing: border-box;
   width: 100vw;
   height: 60px;
+  padding: 0 32px;
   display: flex;
   background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
   align-items: center;
+  justify-content: flex-end;
 `;
 
 const Menu = ({ children }) => {
   return (
-    <nav role="navigation">
+    <Nav role="navigation">
       <Wrapper>{children}</Wrapper>
-    </nav>
+    </Nav>
   );
 };
 
@@ -23,14 +30,17 @@ Menu.item = styled.li`
 `;
 
 Menu.link = styled.a`
-  display: inline-block;
+  padding: 4px 8px;
+  margin-left: 28px;
   color: white;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
-  padding: 0 16px;
-  height: 60px;
-  line-height: 60px;
+
+  &:hover {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+  }
 `;
 
 export default Menu;
