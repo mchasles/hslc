@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
-import Img from 'gatsby-image';
+import Img from 'gatsby-image/withIEPolyfill';
 import Menu from '../components/Menu';
 import Panoramic from '../components/Panoramic';
 import Cabin from '../components/Cabin';
@@ -55,7 +55,6 @@ const BgImg = styled(Img)`
 `;
 
 const LogoImg = styled(Img)`
-  position: absolute;
   z-index: 1;
   top: 50%;
   left: 50%;
@@ -92,7 +91,8 @@ export default ({ data }) => {
             fixed={logoImg}
             fadeIn={false}
             durationFadeIn={50000}
-            style={{ position: 'absolute' }}
+            style={{ position: 'absolute', width: '33vw' }}
+            objectFit="contain"
           />
           <BgImg fluid={bgImg} durationFadeIn={4000} />
         </Section>
