@@ -73,6 +73,8 @@ export default ({ data }) => {
         <title>{data.site.siteMetadata.title}</title>
         <meta name="description" content={data.site.siteMetadata.description} />
         <meta name="keywords" content="" />
+        <meta name="robots" content="noindex" />
+        <meta name="googlebot" content="noindex" />
       </Helmet>
       <Wrapper>
         <GlobalStyle />
