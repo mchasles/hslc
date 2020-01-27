@@ -77,24 +77,16 @@ export default ({ data }) => {
       </Helmet>
       <Wrapper>
         <GlobalStyle />
-        <Menu>
-          {titles.map(({ value }) => (
-            <Menu.item>
-              <Menu.link href={`#${value.replace(/\s+/g, '-').toLowerCase()}`}>
-                {value}
-              </Menu.link>
-            </Menu.item>
-          ))}
-        </Menu>
+        <Menu titles={titles} />
         <Section id="nos-cabanes">
           <LogoImg
             fixed={logoImg}
             fadeIn={false}
             durationFadeIn={50000}
-            style={{ position: 'absolute', width: '33vw' }}
+            style={{ position: 'absolute', width: '50vw' }}
             objectFit="contain"
           />
-          <BgImg fluid={bgImg} durationFadeIn={4000} />
+          <BgImg fluid={bgImg} durationFadeIn={1000} />
         </Section>
         <Section id="prestations">
           <Panoramic />
