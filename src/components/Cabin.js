@@ -8,13 +8,12 @@ const Section = styled.section`
   display: flex;
   align-items: center;
   position: relative;
-  width: 100vw;
   height: 80vh;
   flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
 `;
 
 const BgImg = styled(Img)`
-  width: 50vw;
+  width: 50%;
   height: 60vh;
 `;
 
@@ -26,7 +25,7 @@ const Thumbnail = styled(Img)`
 `;
 
 const Content = styled.div`
-  width: 38vw;
+  width: 38%;
   height: 60vh;
   padding: 0 6vw;
   display: flex;

@@ -23,9 +23,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
-    background-color: rgb(230, 230, 230);
-    
+    overflow: hidden;
+    background-color: #e6e6e6;
   }
 
   nav, ul {
@@ -38,19 +37,17 @@ const GlobalStyle = createGlobalStyle`
 
 const Wrapper = styled.div`
   height: 100vh;
+  width: 100vw;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  background: rgb(255, 255, 255);
 `;
 
 const Section = styled.section`
   position: relative;
-  width: 100vw;
   height: 100vh;
 `;
 
 const BgImg = styled(Img)`
-  width: 100vw;
   height: 100vh;
 `;
 

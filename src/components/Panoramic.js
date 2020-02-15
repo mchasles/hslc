@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 const BgImg = styled(Img)`
   position: absolute;
   top: calc(25% + 40px);
-  width: 100vw;
+  width: 100%;
   height: calc(40% - 20px);
 `;
 
@@ -17,8 +17,8 @@ const headingStyles = css`
   justify-content: center;
   position: absolute;
   z-index: 2;
-  width: 80vw;
-  padding: 0 10vw;
+  width: 80%;
+  padding: 0 10%s;
   margin: 0;
   color: rgb(90, 90, 90);
   font-weight: 100;
