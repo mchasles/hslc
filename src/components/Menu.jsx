@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { device } from '../utils/media';
 
-const BUTTON_COLOR = 'rgba(0, 0, 0, 0.9)';
-const BG_COLOR = 'rgb(0, 0, 0)';
-
-const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  background: ${BUTTON_COLOR};
+const HamburgerButton = styled.button`
   position: fixed;
   z-index: 22;
   top: 12px;
   right: 12px;
-  border: none;
+
+  display: flex;
+  justify-content: center;
+
   width: 56px;
   height: 56px;
+  border: none;
   border-radius: 100%;
+
+  background: rgba(0, 0, 0, 0.9);
   outline: none;
   transition: opacity 0.2s ease-out;
 
@@ -25,15 +25,19 @@ const Button = styled.button`
   }
 
   &:before {
-    content: '';
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    margin: auto;
+
     height: 30%;
     width: 35%;
+    margin: auto;
+
+    content: '';
+    transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
+
     background: linear-gradient(
       to bottom,
       white,
@@ -47,27 +51,29 @@ const Button = styled.button`
       white 82%,
       white 100%
     );
-    transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
   }
 
   &:after {
     opacity: 0;
+
     content: '×';
+
     color: white;
     font-family: Arial, sans-serif;
     font-size: 44px;
-    line-height: 0;
     transition: opacity 0.4s ease-out;
   }
 
   .open & {
     background-color: transparent;
+
     &:before {
       opacity: 0;
-      width: 0;
     }
+
     &:after {
       opacity: 1;
+
       transform: translate3d(0, 0, 0) rotate(180deg);
       transition: transform 0.4s 1.2s ease-out, opacity 0.4s 1.2s ease-out;
     }
@@ -107,48 +113,58 @@ const menuAnimation = keyframes`
 `;
 
 const List = styled.ul`
-  z-index: 20;
   position: fixed;
+  z-index: 20;
   top: -100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
   width: 100%;
   height: 100%;
+  padding: 16%;
+
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  overflow: hidden;
-  padding: 108px 64px;
   box-sizing: border-box;
 
   &:before {
-    content: '';
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+
+    overflow: hidden;
     margin: auto;
-    opacity: 0.9;
-    background-color: ${BG_COLOR};
     padding-bottom: 100%;
     border-radius: 100%;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    content: '';
+
     transform: scale(0.04), translateY(9999px);
-    overflow: hidden;
   }
 
   @media ${device.tablet} {
-    display: flex;
-    align-items: center;
     top: 0;
+
+    flex-direction: row;
+    align-items: center;
+
     height: 64px;
     padding: 0 32px;
 
     &:before {
       border-radius: 0;
-      opacity: 0.6;
     }
   }
 
   .open & {
     top: 0;
+
     &:before {
       animation: ${menuAnimation} 0.6s ease-out forwards;
     }
@@ -157,10 +173,11 @@ const List = styled.ul`
   li {
     position: relative;
     opacity: 0;
+    margin: 0 auto;
 
     @media ${device.tablet} {
       opacity: 1;
-      margin-right: 32px;
+      margin: 0 32px 0 0;
     }
 
     .open & {
@@ -172,23 +189,24 @@ const List = styled.ul`
   a {
     display: block;
     width: 100%;
-    text-align: center;
+
     line-height: 72px;
+
     color: white;
+    text-align: center;
     text-transform: uppercase;
     font-size: 18px;
     text-decoration: none;
 
     @media ${device.tablet} {
+      opacity: 0.6;
       font-size: 12px;
       line-height: 64px;
-      &:hover {
-        opacity: 0.6;
-      }
-    }
 
-    &:hover {
-      cursor: pointer;
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
     }
   }
 `;
@@ -198,7 +216,7 @@ const Menu = ({ titles }) => {
 
   return (
     <nav className={isOpen ? 'open' : null} role="navigation">
-      <Button onClick={() => setIsOpen(!isOpen)} />
+      <HamburgerButton onClick={() => setIsOpen(!isOpen)} />
       <List onClick={() => setIsOpen(false)}>
         {titles.map(({ value }) => (
           <li>
