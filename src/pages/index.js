@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
 import Img from 'gatsby-image/withIEPolyfill';
 import Menu from '../components/Menu';
+import Button from '../components/Button';
 import Panoramic from '../components/Panoramic';
 import Cabin from '../components/Cabin';
 import fontFiles from '../fonts';
@@ -21,10 +22,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
+    margin: 0;
+
     background-color: #e6e6e6;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   nav, ul {
@@ -51,11 +53,22 @@ const BgImg = styled(Img)`
   height: 100vh;
 `;
 
-const LogoImg = styled(Img)`
-  z-index: 1;
+const LogoWrapper = styled.div`
+  position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
   transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 50vw;
+`;
+
+const BookButton = styled(Button)`
+  margin-top: 24px;
 `;
 
 export default ({ data }) => {
@@ -76,13 +89,15 @@ export default ({ data }) => {
         <GlobalStyle />
         <Menu titles={titles} />
         <Section id="nos-cabanes">
-          <LogoImg
-            fixed={logoImg}
-            fadeIn={false}
-            durationFadeIn={50000}
-            style={{ position: 'absolute', width: '50vw' }}
-            objectFit="contain"
-          />
+          <LogoWrapper>
+            <Img
+              fixed={logoImg}
+              fadeIn={false}
+              durationFadeIn={50000}
+              objectFit="contain"
+            />
+            <BookButton>Réservez</BookButton>
+          </LogoWrapper>
           <BgImg fluid={bgImg} durationFadeIn={1000} />
         </Section>
         <Section id="prestations">
