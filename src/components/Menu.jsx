@@ -59,7 +59,7 @@ const HamburgerButton = styled.button`
     content: '×';
 
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 44px;
     transition: opacity 0.4s ease-out;
   }
