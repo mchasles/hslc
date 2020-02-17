@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
-import Menu from '../components/Menu';
+import Menu from './Menu';
 import fontFiles from '../fonts';
 
 const GlobalStyle = createGlobalStyle`
@@ -47,18 +47,6 @@ const query = graphql`
         title
       }
     }
-    allMarkdownRemark(filter: { fields: { slug: { eq: "/data/menu/" } } }) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          headings {
-            value
-          }
-        }
-      }
-    }
   }
 `;
 
@@ -66,8 +54,6 @@ const Page = ({ children }) => (
   <StaticQuery
     query={query}
     render={data => {
-      const titles = data.allMarkdownRemark.edges[0]?.node.headings;
-
       return (
         <>
           <Helmet>
@@ -82,7 +68,7 @@ const Page = ({ children }) => (
           </Helmet>
           <Wrapper>
             <GlobalStyle />
-            <Menu titles={titles} />
+            <Menu />
             {children}
           </Wrapper>
         </>

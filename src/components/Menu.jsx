@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+
+import homeLogo from '../images/home.png';
 import { device } from '../utils/media';
 
 const HamburgerButton = styled.button`
@@ -120,14 +122,17 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
 
-  overflow: hidden;
   width: 100%;
   height: 100%;
-  padding: 16%;
+  padding: 8%;
 
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   box-sizing: border-box;
+
+  @media ${device.tablet} {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 
   &:before {
     position: absolute;
@@ -141,11 +146,14 @@ const List = styled.ul`
     padding-bottom: 100%;
     border-radius: 100%;
 
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
 
     content: '';
-
     transform: scale(0.04), translateY(9999px);
+
+    @media ${device.tablet} {
+      display: none;
+    }
   }
 
   @media ${device.tablet} {
@@ -169,60 +177,167 @@ const List = styled.ul`
       animation: ${menuAnimation} 0.6s ease-out forwards;
     }
   }
+`;
 
-  li {
-    position: relative;
-    opacity: 0;
-    margin: 0 auto;
+const ListItem = styled.li`
+  position: relative;
+  opacity: 0;
+  margin: 0 auto;
 
-    @media ${device.tablet} {
-      opacity: 1;
-      margin: 0 32px 0 0;
-    }
-
-    .open & {
-      opacity: 1;
-      transition: opacity 0.2s 0.6s ease-out;
-    }
+  .open & {
+    opacity: 1;
+    transition: opacity 0.2s 0.6s ease-out;
   }
 
-  a {
-    display: block;
-    width: 100%;
+  @media ${device.tablet} {
+    opacity: 0.8;
+    margin: 0 26px 0 0;
 
-    line-height: 72px;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
 
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 18px;
-    text-decoration: none;
+    ul {
+      display: none;
+    }
 
-    @media ${device.tablet} {
-      opacity: 0.6;
-      font-size: 12px;
-      line-height: 64px;
-
-      &:hover {
-        opacity: 1;
-        cursor: pointer;
-      }
+    &:hover ul {
+      display: block;
     }
   }
 `;
 
-const Menu = ({ titles }) => {
+const ListHomeLink = styled.a`
+  display: block;
+  height: 64px;
+  padding: 12px 0;
+  box-sizing: border-box;
+
+  img {
+    height: 100%;
+  }
+`;
+
+const ListLink = styled.a`
+  display: block;
+  width: 100%;
+
+  line-height: 48px;
+
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: none;
+
+  @media ${device.tablet} {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    line-height: initial;
+    font-size: 12px;
+  }
+`;
+
+const SubList = styled.ul`
+  margin-bottom: 22px;
+
+  @media ${device.tablet} {
+    position: absolute;
+    top: 52px;
+    left: 50%;
+
+    padding: 8px 0;
+    border-radius: 4px;
+
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.08) 2px 7px 18px 0px;
+
+    transform: translateX(-50%);
+  }
+`;
+
+const SubListLink = styled.a`
+  display: block;
+  width: 100%;
+
+  line-height: 38px;
+
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+
+  @media ${device.tablet} {
+    width: auto;
+    padding: 0 22px;
+    line-height: 36px;
+    text-align: left;
+    white-space: nowrap;
+
+    color: rgb(140, 140, 140);
+    &:hover {
+      color: rgb(40, 40, 40);
+    }
+  }
+`;
+
+const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className={isOpen ? 'open' : null} role="navigation">
       <HamburgerButton onClick={() => setIsOpen(!isOpen)} />
       <List onClick={() => setIsOpen(false)}>
-        {titles.map(({ value }) => (
-          <li>
-            <a href={`#${value.replace(/\s+/g, '-').toLowerCase()}`}>{value}</a>
-          </li>
-        ))}
+        <ListItem>
+          <ListHomeLink href="/">
+            <img src={homeLogo} alt="Logo" />
+          </ListHomeLink>
+        </ListItem>
+        <ListItem>
+          <ListLink href="/">Nos cabanes</ListLink>
+        </ListItem>
+        <ListItem>
+          <ListLink href="/infos-pratiques">Infos pratiques</ListLink>
+          <SubList>
+            <li>
+              <SubListLink href="/">A savoir avant votre séjour</SubListLink>
+            </li>
+            <li>
+              <SubListLink href="/">Tarifs</SubListLink>
+            </li>
+            <li>
+              <SubListLink href="/">Repas</SubListLink>
+            </li>
+            <li>
+              <SubListLink href="/">Suppléments</SubListLink>
+            </li>
+            <li>
+              <SubListLink href="/">Activités</SubListLink>
+            </li>
+          </SubList>
+        </ListItem>
+        <ListItem>
+          <ListLink href="/qui-sommes-nous">Qui sommes nous ?</ListLink>
+          <SubList>
+            <li>
+              <SubListLink href="/">Présentation</SubListLink>
+            </li>
+            <li>
+              <SubListLink href="/">Philosophie des cabanes</SubListLink>
+            </li>
+            <li>
+              <SubListLink href="/">On parle de nous</SubListLink>
+            </li>
+          </SubList>
+        </ListItem>
+        <ListItem>
+          <ListLink href="/contact">Contact</ListLink>
+        </ListItem>
+        <ListItem>
+          <ListLink href="/cheques-cadeaux">Chèques cadeaux</ListLink>
+        </ListItem>
       </List>
     </nav>
   );
