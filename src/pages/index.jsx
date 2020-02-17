@@ -27,8 +27,6 @@ const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  width: 50vw;
 `;
 
 const BookButton = styled(Button)`
@@ -48,6 +46,7 @@ export default ({ data }) => {
             fadeIn={false}
             durationFadeIn={50000}
             objectFit="contain"
+            style={{ width: '50vw' }}
           />
           <BookButton>Réservez</BookButton>
         </LogoWrapper>
