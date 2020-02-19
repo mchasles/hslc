@@ -21,21 +21,22 @@ const Epicea = styled(BgImg)`
 
 const HouxBlond = styled(BgImg)`
   right: 6%;
-  top: 54%;
+  top: 56%;
 `;
 
 const PinEnvert = styled(BgImg)`
   left: 6%;
-  top: 24%;
+  top: 20%;
 `;
 
 const DesChesnaies = styled(BgImg)`
   left: 6%;
-  top: 74%;
+  top: 76%;
 `;
 
 const Wrapper = styled.div`
   position: relative;
+  max-width: 1550px;
 
   display: flex;
   flex-direction: column;

@@ -255,7 +255,7 @@ const ListLink = styled.a`
 `;
 
 const SubList = styled.ul`
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 
   @media ${device.tablet} {
     position: absolute;
