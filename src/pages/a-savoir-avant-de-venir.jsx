@@ -11,24 +11,26 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  padding-bottom: 64px;
+  padding: 64px 32px;
+
+  font-size: 14px;
 
   @media ${device.tablet} {
     padding-top: 80px;
   }
 
   .gatsby-resp-image-wrapper {
-    width: 80px;
+    width: 60px;
     margin-bottom: 10px;
 
     @media ${device.tablet} {
-      width: 140px;
+      width: 100px;
       margin-bottom: 20px;
     }
   }
 
   p {
-    margin: 0;
+    margin: 0 0 20px 0;
 
     text-align: center;
     color: rgb(117, 117, 117);
@@ -40,7 +42,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Infos = ({ data }) => {
+const ToKnowBeforeComing = ({ data }) => {
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
   return (
@@ -50,7 +52,7 @@ const Infos = ({ data }) => {
   );
 };
 
-export default Infos;
+export default ToKnowBeforeComing;
 
 export const query = graphql`
   query {

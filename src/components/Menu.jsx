@@ -326,7 +326,9 @@ const Menu = () => {
           <ListLink>Infos pratiques</ListLink>
           <SubList>
             <li>
-              <SubListLink href="/">A savoir avant votre séjour</SubListLink>
+              <SubListLink href="/a-savoir-avant-de-venir">
+                A savoir avant votre séjour
+              </SubListLink>
             </li>
             <li>
               <SubListLink href="/">Tarifs</SubListLink>
