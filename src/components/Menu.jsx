@@ -85,6 +85,7 @@ const HamburgerButton = styled.button`
 
 const menuAnimation = keyframes`
   0% {
+    height: 0;
     opacity: 0;
     transform: scale(0.04) translateY(300%);
   }
@@ -97,7 +98,7 @@ const menuAnimation = keyframes`
   }
   60% {
     opacity: 1;
-    transform: scale(0.02) translateY(0px);
+    transform: scale(0.02) translateY(0);
   }
   61% {
     transform: scale(0.04);
@@ -110,7 +111,6 @@ const menuAnimation = keyframes`
   100% {
     transform: scale(2);
     height: 100%;
-    padding-bottom: 0;
     border-radius: 0;
   }
 `;
@@ -149,7 +149,7 @@ const List = styled.ul`
 
     background-color: rgba(0, 0, 0, 0.9);
 
-    content: '';
+    content: ' ';
     transform: scale(0.04), translateY(9999px);
 
     @media ${device.tablet} {
