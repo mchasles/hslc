@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import classNames from 'classnames';
 
 import homeLogo from '../images/home.png';
 import { device } from '../utils/media';
@@ -189,6 +190,14 @@ const ListItem = styled.li`
     transition: opacity 0.2s 0.6s ease-out;
   }
 
+  ul {
+    display: none;
+  }
+
+  &.expanded ul {
+    display: block;
+  }
+
   @media ${device.tablet} {
     opacity: 0.8;
     margin: 0 26px 0 0;
@@ -198,7 +207,8 @@ const ListItem = styled.li`
       cursor: pointer;
     }
 
-    ul {
+    ul,
+    &.expanded ul {
       display: none;
     }
 
@@ -230,6 +240,10 @@ const ListLink = styled.a`
   text-transform: uppercase;
   font-size: 16px;
   text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media ${device.tablet} {
     display: flex;
@@ -285,6 +299,7 @@ const SubListLink = styled.a`
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [expandedId, setExpandedId] = useState();
 
   return (
     <nav className={isOpen ? 'open' : null} role="navigation">
@@ -298,8 +313,17 @@ const Menu = () => {
         <ListItem>
           <ListLink href="/">Nos cabanes</ListLink>
         </ListItem>
-        <ListItem>
-          <ListLink href="/infos-pratiques">Infos pratiques</ListLink>
+        <ListItem
+          id="infos-pratiques"
+          onClick={event => {
+            event.stopPropagation();
+            setExpandedId(
+              expandedId === 'infos-pratiques' ? null : 'infos-pratiques'
+            );
+          }}
+          className={classNames({ expanded: expandedId === 'infos-pratiques' })}
+        >
+          <ListLink>Infos pratiques</ListLink>
           <SubList>
             <li>
               <SubListLink href="/">A savoir avant votre séjour</SubListLink>
@@ -318,8 +342,17 @@ const Menu = () => {
             </li>
           </SubList>
         </ListItem>
-        <ListItem>
-          <ListLink href="/qui-sommes-nous">Qui sommes nous ?</ListLink>
+        <ListItem
+          id="qui-sommes-nous"
+          onClick={event => {
+            event.stopPropagation();
+            setExpandedId(
+              expandedId === 'qui-sommes-nous' ? null : 'qui-sommes-nous'
+            );
+          }}
+          className={classNames({ expanded: expandedId === 'qui-sommes-nous' })}
+        >
+          <ListLink>Qui sommes nous ?</ListLink>
           <SubList>
             <li>
               <SubListLink href="/">Présentation</SubListLink>
