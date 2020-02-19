@@ -266,7 +266,7 @@ const SubList = styled.ul`
     border-radius: 4px;
 
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.08) 2px 7px 18px 0px;
+    box-shadow: rgba(0, 0, 0, 0.08) 2px 4px 10px 0px;
 
     transform: translateX(-50%);
   }

@@ -1,0 +1,69 @@
+import React from 'react';
+import styled from 'styled-components';
+
+import { device } from '../utils/media';
+
+import desChesnaies from '../images/des_chesnaies.jpg';
+import epicea from '../images/epicea.jpg';
+import houxBlond from '../images/houx_blond.jpg';
+import pinEnvert from '../images/pin_en_vert.jpg';
+
+const BgImg = styled.img`
+  position: absolute;
+  width: 16%;
+  min-width: 100px;
+`;
+
+const Epicea = styled(BgImg)`
+  right: 6%;
+  top: 8%;
+`;
+
+const HouxBlond = styled(BgImg)`
+  right: 6%;
+  top: 54%;
+`;
+
+const PinEnvert = styled(BgImg)`
+  left: 6%;
+  top: 24%;
+`;
+
+const DesChesnaies = styled(BgImg)`
+  left: 6%;
+  top: 74%;
+`;
+
+const Wrapper = styled.div`
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 64px 32px;
+
+  font-size: 14px;
+
+  @media ${device.tablet} {
+    padding-top: 80px;
+  }
+`;
+
+const Content = styled.div`
+  z-index: 1;
+`;
+
+const SectionBgImages = ({ children }) => {
+  return (
+    <Wrapper>
+      <Content>{children}</Content>
+      <DesChesnaies src={desChesnaies} alt="Des Chesnaies" />
+      <Epicea src={epicea} alt="Epicea" />
+      <HouxBlond src={houxBlond} alt="Houx blond" />
+      <PinEnvert src={pinEnvert} alt="Pin en vert" />
+    </Wrapper>
+  );
+};
+
+export default SectionBgImages;

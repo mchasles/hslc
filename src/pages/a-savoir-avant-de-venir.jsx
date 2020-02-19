@@ -5,19 +5,12 @@ import styled from 'styled-components';
 import { device } from '../utils/media';
 
 import Page from '../components/Page';
+import SectionBgImages from '../components/SectionBgImages';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding: 64px 32px;
-
-  font-size: 14px;
-
-  @media ${device.tablet} {
-    padding-top: 80px;
-  }
 
   .gatsby-resp-image-wrapper {
     width: 60px;
@@ -47,7 +40,9 @@ const ToKnowBeforeComing = ({ data }) => {
 
   return (
     <Page>
-      <Wrapper dangerouslySetInnerHTML={{ __html: html }} />
+      <SectionBgImages>
+        <Wrapper dangerouslySetInnerHTML={{ __html: html }} />
+      </SectionBgImages>
     </Page>
   );
 };
