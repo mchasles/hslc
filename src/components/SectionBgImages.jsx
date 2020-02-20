@@ -43,6 +43,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   padding: 64px 32px;
+  margin: 0 auto;
 
   font-size: 14px;
 
