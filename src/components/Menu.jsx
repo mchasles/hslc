@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import homeLogo from '../images/home.png';
 import { device } from '../utils/media';
+import data from '../data/menu.yaml';
 
 const HamburgerButton = styled.button`
   position: fixed;
@@ -300,6 +301,7 @@ const SubListLink = styled.a`
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedId, setExpandedId] = useState();
+  console.log(data);
 
   return (
     <nav className={isOpen ? 'open' : null} role="navigation">
@@ -331,13 +333,13 @@ const Menu = () => {
               </SubListLink>
             </li>
             <li>
-              <SubListLink href="/">Tarifs</SubListLink>
+              <SubListLink href="/tarifs">Tarifs</SubListLink>
             </li>
             <li>
-              <SubListLink href="/">Repas</SubListLink>
+              <SubListLink href="/repas">Repas</SubListLink>
             </li>
             <li>
-              <SubListLink href="/">Suppléments</SubListLink>
+              <SubListLink href="/supplements">Suppléments</SubListLink>
             </li>
             <li>
               <SubListLink href="/">Activités</SubListLink>

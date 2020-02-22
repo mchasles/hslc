@@ -8,36 +8,45 @@ import Page from '../components/Page';
 import SectionBgImages from '../components/SectionBgImages';
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   margin: auto;
 
   @media ${device.tablet} {
     max-width: 60%;
   }
 
-  .gatsby-resp-image-wrapper {
-    width: 60px;
-    margin-bottom: 10px;
+  table {
+    width: 100%;
+    margin: auto;
 
     @media ${device.tablet} {
-      width: 100px;
-      margin-bottom: 20px;
     }
   }
+  thead {
+    color: white;
+    text-align: left;
+    background-color: rgba(165, 188, 84, 0.8);
+  }
 
-  p {
-    margin: 0 0 20px 0;
+  th,
+  td {
+    padding: 8px;
+  }
 
-    text-align: center;
+  td {
     color: rgb(117, 117, 117);
-    font-style: italic;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  ul {
+    margin: 16px 8px;
+    li {
+      margin-bottom: 8px;
+      color: rgb(97, 97, 97);
+    }
   }
 `;
 
-const ToKnowBeforeComing = ({ data }) => {
+const Prices = ({ data }) => {
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
   return (
@@ -49,23 +58,15 @@ const ToKnowBeforeComing = ({ data }) => {
   );
 };
 
-export default ToKnowBeforeComing;
+export default Prices;
 
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: {
-        fields: {
-          slug: { eq: "/data/infos-pratiques/a-savoir-avant-de-venir/" }
-        }
-      }
+      filter: { fields: { slug: { eq: "/data/infos-pratiques/tarifs/" } } }
     ) {
       edges {
         node {
-          headings {
-            value
-            depth
-          }
           html
         }
       }

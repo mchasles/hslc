@@ -36,13 +36,15 @@ const DesChesnaies = styled(BgImg)`
 
 const Wrapper = styled.div`
   position: relative;
+  min-height: 100vh;
   max-width: 1550px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 64px 32px;
+  box-sizing: border-box;
+  padding: 84px 32px;
   margin: 0 auto;
 
   font-size: 14px;
@@ -54,6 +56,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   z-index: 1;
+  width: 100%;
 `;
 
 const SectionBgImages = ({ children }) => {
