@@ -6,7 +6,6 @@ import { device } from '../utils/media';
 import Section from './Section';
 
 const Wrapper = styled(Section)`
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +22,11 @@ const Wrapper = styled(Section)`
 
   h1 {
     width: 100%;
+    padding-top: 64px;
+
+    @media ${device.tablet} {
+      padding-top: 96px;
+    }
   }
 
   p {

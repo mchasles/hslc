@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Section from './Section';
 
 const Wrapper = styled(Section)`
+  padding-bottom: 64px;
+
   ul {
     padding-left: 16px;
   }

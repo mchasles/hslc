@@ -7,7 +7,6 @@ const Section = styled.div`
   max-width: 86%;
   margin: 0 auto;
   font-size: 14px;
-  padding-top: 64px;
 
   @media ${device.tablet} {
     max-width: 60%;
@@ -42,15 +41,17 @@ const Section = styled.div`
   }
 
   h1 {
+    margin: 0 8px 16px 8px;
+    padding-top: 64px;
+
+    text-align: center;
     color: rgb(100, 90, 80);
     font-family: 'Pintgram Regular';
     font-size: 48px;
     font-weight: 100;
-    margin: 0 8px 32px 8px;
-    text-align: center;
 
     @media ${device.tablet} {
-      margin-top: 32px;
+      padding-top: 80px;
     }
   }
 
