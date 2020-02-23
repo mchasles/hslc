@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 import classNames from 'classnames';
 
@@ -220,7 +221,7 @@ const ListItem = styled.li`
   }
 `;
 
-const ListHomeLink = styled.a`
+const ListHomeLink = styled(Link)`
   display: block;
   height: 64px;
   padding: 12px 0;
@@ -231,7 +232,7 @@ const ListHomeLink = styled.a`
   }
 `;
 
-const ListLink = styled.a`
+const ListLink = styled(Link)`
   display: block;
   width: 100%;
 
@@ -274,7 +275,7 @@ const SubList = styled.ul`
   }
 `;
 
-const SubListLink = styled.a`
+const SubListLink = styled(Link)`
   display: block;
   width: 100%;
 
@@ -308,7 +309,7 @@ const Menu = () => {
       <HamburgerButton onClick={() => setIsOpen(!isOpen)} />
       <List onClick={() => setIsOpen(false)}>
         <ListItem>
-          <ListHomeLink href="/">
+          <ListHomeLink to="/">
             <img src={homeLogo} alt="Logo" />
           </ListHomeLink>
         </ListItem>
@@ -322,7 +323,7 @@ const Menu = () => {
               {value[label].map(subLabel => (
                 <li key={getPageUrl(subLabel)}>
                   <SubListLink
-                    href={`/${getPageUrl(label)}#${getPageUrl(subLabel)}`}
+                    to={`/${getPageUrl(label)}#${getPageUrl(subLabel)}`}
                     onClick={() => setIsOpen(false)}
                   >
                     {subLabel}
@@ -336,12 +337,28 @@ const Menu = () => {
               key={link}
               id={link}
               onClick={event => {
-                event.stopPropagation();
-                setExpandedId(expandedId === link ? null : link);
+                if (window.innerWidth < 768) {
+                  event.stopPropagation();
+                  setExpandedId(expandedId === link ? null : link);
+                }
               }}
               className={classNames({ expanded: expandedId === link })}
             >
-              <ListLink href={hasSubMenu ? '#' : link}>{label}</ListLink>
+              <ListLink
+                onClick={event => {
+                  console.log(window.innerWidth);
+                  if (window.innerWidth < 768) {
+                    event.preventDefault();
+                  }
+                }}
+                to={
+                  hasSubMenu
+                    ? `/${link}#${getPageUrl(value[label][0])}`
+                    : `/${link}`
+                }
+              >
+                {label}
+              </ListLink>
               {subMenu}
             </ListItem>
           );
