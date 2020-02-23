@@ -12,11 +12,11 @@ const Wrapper = styled(Section)`
 
   .gatsby-resp-image-wrapper {
     width: 60px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 
     @media ${device.tablet} {
       width: 80px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
   }
 
@@ -30,8 +30,8 @@ const Wrapper = styled(Section)`
   }
 
   p {
-    margin: 0 0 20px 0;
-    line-height: 20px;
+    margin: 0;
+    line-height: 18px;
     text-align: center;
     color: rgb(117, 117, 117);
     font-style: italic;
