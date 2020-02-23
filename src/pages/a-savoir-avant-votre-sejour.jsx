@@ -3,34 +3,30 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { device } from '../utils/media';
+import { pageWrapper } from '../utils/styles';
 
 import Page from '../components/Page';
 import SectionBgImages from '../components/SectionBgImages';
 
 const Wrapper = styled.div`
+  ${pageWrapper};
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin: auto;
-
-  @media ${device.tablet} {
-    max-width: 60%;
-  }
 
   .gatsby-resp-image-wrapper {
     width: 60px;
     margin-bottom: 10px;
 
     @media ${device.tablet} {
-      width: 100px;
+      width: 80px;
       margin-bottom: 20px;
     }
   }
 
   p {
     margin: 0 0 20px 0;
-
+    line-height: 20px;
     text-align: center;
     color: rgb(117, 117, 117);
     font-style: italic;
@@ -56,16 +52,12 @@ export const query = graphql`
     allMarkdownRemark(
       filter: {
         fields: {
-          slug: { eq: "/data/infos-pratiques/a-savoir-avant-de-venir/" }
+          slug: { eq: "/data/infos-pratiques/a-savoir-avant-votre-sejour/" }
         }
       }
     ) {
       edges {
         node {
-          headings {
-            value
-            depth
-          }
           html
         }
       }

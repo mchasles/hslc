@@ -1,5 +1,5 @@
 ---
-title: 'A savoir avant de venir'
+title: 'A savoir avant votre séjour'
 date: '2020-01-20'
 ---
 

@@ -2,49 +2,35 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import { device } from '../utils/media';
-import { pageWrapper, tableStyles, paragraphStyles } from '../utils/styles';
+import {
+  pageWrapper,
+  headingsStyles,
+  paragraphStyles,
+  listStyles,
+  linkStyles,
+} from '../utils/styles';
 
 import Page from '../components/Page';
 import SectionBgImages from '../components/SectionBgImages';
 
 const Wrapper = styled.div`
   ${pageWrapper};
-  ${tableStyles};
+  ${headingsStyles};
   ${paragraphStyles};
+  ${listStyles};
+  ${linkStyles};
 
-  table {
-    margin-right: 0 0 16px 0;
-
-    & + table {
-      margin-top: 16px;
-    }
-    th,
-    td {
-      text-align: center;
-    }
-
-    @media ${device.tablet} {
-      float: left;
-
-      width: 56%;
-      margin: 0 0 32px auto;
-
-      & + table {
-        width: 38%;
-        margin: 0 auto 0 6%;
-      }
-    }
+  ul {
+    padding-left: 16px;
   }
 
-  p {
-    @media ${device.tablet} {
-      clear: both;
-    }
+  li {
+    list-style-type: disc;
+    list-style-position: outside;
   }
 `;
 
-const Meal = ({ data }) => {
+const Activities = ({ data }) => {
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
   return (
@@ -56,12 +42,12 @@ const Meal = ({ data }) => {
   );
 };
 
-export default Meal;
+export default Activities;
 
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: { fields: { slug: { eq: "/data/infos-pratiques/repas/" } } }
+      filter: { fields: { slug: { eq: "/data/infos-pratiques/activites/" } } }
     ) {
       edges {
         node {

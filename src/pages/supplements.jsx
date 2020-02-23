@@ -2,48 +2,15 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import { device } from '../utils/media';
+import { pageWrapper, tableStyles, paragraphStyles } from '../utils/styles';
 
 import Page from '../components/Page';
 import SectionBgImages from '../components/SectionBgImages';
 
 const Wrapper = styled.div`
-  margin: auto;
-
-  @media ${device.tablet} {
-    max-width: 60%;
-  }
-
-  table {
-    width: 100%;
-    margin: auto;
-
-    @media ${device.tablet} {
-    }
-  }
-  thead {
-    color: white;
-    text-align: left;
-    background-color: rgba(165, 188, 84, 0.8);
-  }
-
-  th,
-  td {
-    padding: 8px;
-  }
-
-  td {
-    color: rgb(117, 117, 117);
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-
-  p {
-    margin: 16px 8px;
-    color: rgb(97, 97, 97);
-
-    @media ${device.tablet} {
-    }
-  }
+  ${pageWrapper};
+  ${tableStyles};
+  ${paragraphStyles};
 `;
 
 const Extras = ({ data }) => {

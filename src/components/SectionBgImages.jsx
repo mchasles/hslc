@@ -10,28 +10,28 @@ import pinEnvert from '../images/pin_en_vert.jpg';
 
 const BgImg = styled.img`
   position: absolute;
-  width: 16%;
+  width: 16vw;
   min-width: 100px;
 `;
 
 const Epicea = styled(BgImg)`
-  right: 6%;
+  right: 6vw;
   top: 8%;
 `;
 
 const HouxBlond = styled(BgImg)`
-  right: 6%;
-  top: 56%;
+  right: 1vw;
+  top: 68%;
 `;
 
 const PinEnvert = styled(BgImg)`
-  left: 6%;
-  top: 20%;
+  left: 3vw;
+  top: 22%;
 `;
 
 const DesChesnaies = styled(BgImg)`
-  left: 6%;
-  top: 76%;
+  left: 2vw;
+  top: 82%;
 `;
 
 const Wrapper = styled.div`
