@@ -1,3 +1,5 @@
+# Tarifs
+
 | Cabanes                    | Première nuit | Seconde nuit hors Juillet/Août et jours fériés | Haute saison |
 | -------------------------- | ------------- | ---------------------------------------------- | ------------ |
 | Houx Blond<br> Pin en vert | 138€          | 120€                                           | 153€         |

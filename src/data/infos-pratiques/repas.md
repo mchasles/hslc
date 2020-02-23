@@ -1,3 +1,5 @@
+# Repas
+
 | Panier repas gourmet terroir pour 2 personnes : 74€<br>(inclus vin et apéritif)                                                                                                                                                                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Entrée**<br> Salade de magrets fumés, cantal entre - deux et noix grillées, surmontée d’une figue au foie gras, spécialité corrézienne.<br><br> **Plat**<br> Cocottes de Parmentier au confit de canard gratiné au cantal entre - deux Dessert gourmand du jour.<br><br> **Vin**<br> Coteaux de Glanes (rouge par défaut, possibilité de vin blanc ou rosé sur demande) |

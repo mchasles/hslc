@@ -1,3 +1,5 @@
+# Activités
+
 ## Activités à faire sur place
 
 De nombreuses randonnées avec cartes fournies testées régulièrement par nos soins à vous recommander.

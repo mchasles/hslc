@@ -3,6 +3,8 @@ title: 'A savoir avant votre séjour'
 date: '2020-01-20'
 ---
 
+# À savoir avant votre séjour
+
 ![Panneaux solaire](../../images/info_solar.png)
 Nos cabanes sont alimentées par panneau solaire pour fournir de la lumière en soirée.
 

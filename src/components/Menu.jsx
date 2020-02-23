@@ -321,7 +321,10 @@ const Menu = () => {
             <SubList>
               {value[label].map(subLabel => (
                 <li key={getPageUrl(subLabel)}>
-                  <SubListLink href={getPageUrl(subLabel)}>
+                  <SubListLink
+                    href={`/${getPageUrl(label)}#${getPageUrl(subLabel)}`}
+                    onClick={() => setIsOpen(false)}
+                  >
                     {subLabel}
                   </SubListLink>
                 </li>

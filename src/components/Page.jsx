@@ -2,7 +2,9 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
+
 import Menu from './Menu';
+
 import fontFiles from '../fonts';
 
 const GlobalStyle = createGlobalStyle`
@@ -31,11 +33,18 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  table {
+    border-spacing: 0;
+  }
 `;
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
   height: 100vh;
   width: 100vw;
+  box-sizing: border-box;
   overflow-y: scroll;
   scroll-behavior: smooth;
 `;
