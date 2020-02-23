@@ -1,4 +1,9 @@
-const kebabLowerCase = str => str.replace(/\s+/g, '-').toLowerCase();
+const kebabLowerCase = str =>
+  str
+    .replace(/\?/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .toLowerCase();
 
 const removeAccents = str => {
   const accent = [
