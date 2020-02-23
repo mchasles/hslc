@@ -3,8 +3,9 @@ import styled, { keyframes } from 'styled-components';
 import classNames from 'classnames';
 
 import homeLogo from '../images/home.png';
+import { getPageUrl } from '../utils/url';
 import { device } from '../utils/media';
-import data from '../data/menu.yaml';
+import dataMenu from '../data/menu.yaml';
 
 const HamburgerButton = styled.button`
   position: fixed;
@@ -301,7 +302,6 @@ const SubListLink = styled.a`
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedId, setExpandedId] = useState();
-  console.log(data);
 
   return (
     <nav className={isOpen ? 'open' : null} role="navigation">
@@ -312,69 +312,37 @@ const Menu = () => {
             <img src={homeLogo} alt="Logo" />
           </ListHomeLink>
         </ListItem>
-        <ListItem>
-          <ListLink href="/">Nos cabanes</ListLink>
-        </ListItem>
-        <ListItem
-          id="infos-pratiques"
-          onClick={event => {
-            event.stopPropagation();
-            setExpandedId(
-              expandedId === 'infos-pratiques' ? null : 'infos-pratiques'
-            );
-          }}
-          className={classNames({ expanded: expandedId === 'infos-pratiques' })}
-        >
-          <ListLink>Infos pratiques</ListLink>
-          <SubList>
-            <li>
-              <SubListLink href="/a-savoir-avant-de-venir">
-                A savoir avant votre séjour
-              </SubListLink>
-            </li>
-            <li>
-              <SubListLink href="/tarifs">Tarifs</SubListLink>
-            </li>
-            <li>
-              <SubListLink href="/repas">Repas</SubListLink>
-            </li>
-            <li>
-              <SubListLink href="/supplements">Suppléments</SubListLink>
-            </li>
-            <li>
-              <SubListLink href="/">Activités</SubListLink>
-            </li>
-          </SubList>
-        </ListItem>
-        <ListItem
-          id="qui-sommes-nous"
-          onClick={event => {
-            event.stopPropagation();
-            setExpandedId(
-              expandedId === 'qui-sommes-nous' ? null : 'qui-sommes-nous'
-            );
-          }}
-          className={classNames({ expanded: expandedId === 'qui-sommes-nous' })}
-        >
-          <ListLink>Qui sommes nous ?</ListLink>
-          <SubList>
-            <li>
-              <SubListLink href="/">Présentation</SubListLink>
-            </li>
-            <li>
-              <SubListLink href="/">Philosophie des cabanes</SubListLink>
-            </li>
-            <li>
-              <SubListLink href="/">On parle de nous</SubListLink>
-            </li>
-          </SubList>
-        </ListItem>
-        <ListItem>
-          <ListLink href="/contact">Contact</ListLink>
-        </ListItem>
-        <ListItem>
-          <ListLink href="/cheques-cadeaux">Chèques cadeaux</ListLink>
-        </ListItem>
+        {dataMenu.map((value, key) => {
+          const hasSubMenu = typeof value === 'object';
+          const label = hasSubMenu ? Object.keys(value)[0] : value;
+          const link = getPageUrl(label);
+
+          const subMenu = hasSubMenu ? (
+            <SubList>
+              {value[label].map(subLabel => (
+                <li key={getPageUrl(subLabel)}>
+                  <SubListLink href={getPageUrl(subLabel)}>
+                    {subLabel}
+                  </SubListLink>
+                </li>
+              ))}
+            </SubList>
+          ) : null;
+          return (
+            <ListItem
+              key={link}
+              id={link}
+              onClick={event => {
+                event.stopPropagation();
+                setExpandedId(expandedId === link ? null : link);
+              }}
+              className={classNames({ expanded: expandedId === link })}
+            >
+              <ListLink href={hasSubMenu ? '#' : link}>{label}</ListLink>
+              {subMenu}
+            </ListItem>
+          );
+        })}
       </List>
     </nav>
   );
