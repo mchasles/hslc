@@ -4,6 +4,8 @@ import styled, { keyframes } from 'styled-components';
 import classNames from 'classnames';
 
 import homeLogo from '../images/home.png';
+import fbLogo from '../images/facebook.png';
+import instaLogo from '../images/instagram.png';
 import { getPageUrl } from '../utils/url';
 import { device } from '../utils/media';
 import dataMenu from '../data/menu.yaml';
@@ -232,6 +234,29 @@ const ListHomeLink = styled(Link)`
   }
 `;
 
+const ListItemSocial = styled(ListItem)`
+  @media ${device.tablet} {
+    margin-right: 16px;
+  }
+`;
+
+const ListItemFb = styled(ListItemSocial)`
+  @media ${device.tablet} {
+    margin-left: auto;
+  }
+`;
+
+const ListSocialLink = styled(Link)`
+  display: block;
+  height: 56px;
+  padding: 12px 0;
+  box-sizing: border-box;
+
+  img {
+    height: 100%;
+  }
+`;
+
 const ListLink = styled(Link)`
   display: block;
   width: 100%;
@@ -363,6 +388,16 @@ const Menu = () => {
             </ListItem>
           );
         })}
+        <ListItemFb>
+          <ListSocialLink to="/">
+            <img src={fbLogo} alt="Facebook" />
+          </ListSocialLink>
+        </ListItemFb>
+        <ListItemSocial>
+          <ListSocialLink to="/">
+            <img src={instaLogo} alt="Instagram" />
+          </ListSocialLink>
+        </ListItemSocial>
       </List>
     </nav>
   );
