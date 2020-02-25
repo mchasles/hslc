@@ -96,7 +96,7 @@ const Medias = () => {
         <Video>
           <iframe
             title="Reportage télévisuel du journal de Jean-Pierre Pernaut"
-            src="http://www.youtube.com/embed/zO4sjjabCTg?rel=0"
+            src="https://www.youtube.com/embed/zO4sjjabCTg?rel=0"
             allowfullscreen
             frameBorder={0}
           ></iframe>
@@ -109,7 +109,7 @@ const Medias = () => {
         <Video>
           <iframe
             title="Reportage réalisé par Christophe Dubois, ambassadeur de la Corrèze"
-            src="http://www.youtube.com/embed/igv3rcI5a1E?rel=0"
+            src="https://www.youtube.com/embed/igv3rcI5a1E?rel=0"
             frameborder="0"
             allowfullscreen=""
           ></iframe>
