@@ -6,6 +6,10 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Menu from './Menu';
 
 import fontFiles from '../fonts';
+import desChesnaies from '../images/des_chesnaies.jpg';
+import epicea from '../images/epicea.jpg';
+import houxBlond from '../images/houx_blond.jpg';
+import pinEnvert from '../images/pin_en_vert.jpg';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -45,6 +49,31 @@ const Wrapper = styled.div`
   overflow-y: scroll;
   scroll-behavior: smooth;
 `;
+const BgImg = styled.img`
+  position: absolute;
+  width: 12vw;
+  min-width: 100px;
+`;
+
+const Epicea = styled(BgImg)`
+  right: 10vw;
+  top: 8vh;
+`;
+
+const HouxBlond = styled(BgImg)`
+  right: 6vw;
+  top: 58vh;
+`;
+
+const PinEnvert = styled(BgImg)`
+  left: 8vw;
+  top: 20vh;
+`;
+
+const DesChesnaies = styled(BgImg)`
+  left: 6vw;
+  top: 66vh;
+`;
 
 const query = graphql`
   query {
@@ -56,7 +85,7 @@ const query = graphql`
   }
 `;
 
-const Page = ({ children }) => (
+const Page = ({ children, bgImgs = true }) => (
   <StaticQuery
     query={query}
     render={data => {
@@ -76,6 +105,14 @@ const Page = ({ children }) => (
             <GlobalStyle />
             <Menu />
             {children}
+            {bgImgs && (
+              <>
+                <DesChesnaies src={desChesnaies} alt="Des Chesnaies" />
+                <Epicea src={epicea} alt="Epicea" />
+                <HouxBlond src={houxBlond} alt="Houx blond" />
+                <PinEnvert src={pinEnvert} alt="Pin en vert" />
+              </>
+            )}
           </Wrapper>
         </>
       );

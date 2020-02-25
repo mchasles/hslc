@@ -3,6 +3,7 @@ import { device } from '../utils/media';
 
 const Section = styled.div`
   position: relative;
+  z-index: 2;
   width: 100%;
   max-width: 86%;
   margin: 0 auto;

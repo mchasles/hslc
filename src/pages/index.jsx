@@ -41,7 +41,7 @@ export default ({ data }) => {
   const logoImg = data.logo.childImageSharp.fixed;
 
   return (
-    <Page>
+    <Page bgImgs={false}>
       <Section id="nos-cabanes">
         <LogoWrapper>
           <Img

@@ -3,14 +3,12 @@ import styled from 'styled-components';
 
 import Section from './Section';
 import franceBleu from '../images/france_bleu_limousin_logo.png';
+import logosPresse from '../images/logos_presse.png';
 
 const Wrapper = styled(Section)`
   p {
     margin-bottom: 16px;
     text-align: center;
-  }
-  .highlight {
-    color: rgb(165, 188, 84);
   }
 `;
 
@@ -21,6 +19,11 @@ const MediaImg = styled.div`
   padding: 32px 0;
 
   img {
+    margin: auto;
+  }
+  img.logos-presse {
+    width: 100%;
+    max-width: 530px;
     margin: auto;
   }
 `;
@@ -157,7 +160,7 @@ const Medias = () => {
         </audio>
       </MediaAudio>
       <MediaText>
-        <p className="highlight">La presse se déchaîne !</p>
+        <p>La presse se déchaîne !</p>
         <p>
           {' '}
           Retrouvez nous sur{' '}
@@ -180,10 +183,21 @@ const Medias = () => {
             Babel Voyages
           </a>
         </p>
-        <br />
-        <br />
-        <br />
       </MediaText>
+      <MediaImg>
+        <p>
+          Tous leurs articles nous concernant se trouvent sur{' '}
+          <a
+            href="./presse-hetre-sous-le-charme.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ce fichier pdf
+          </a>
+          .
+        </p>
+        <img className="logos-presse" alt="Logos Presse" src={logosPresse} />
+      </MediaImg>
     </Wrapper>
   );
 };

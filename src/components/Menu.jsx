@@ -246,7 +246,7 @@ const ListItemFb = styled(ListItemSocial)`
   }
 `;
 
-const ListSocialLink = styled(Link)`
+const ListSocialLink = styled.a`
   display: block;
   height: 56px;
   padding: 12px 0;
@@ -362,7 +362,7 @@ const Menu = () => {
               key={link}
               id={link}
               onClick={event => {
-                if (window.innerWidth < 768) {
+                if (window.innerWidth < 768 && hasSubMenu) {
                   event.stopPropagation();
                   setExpandedId(expandedId === link ? null : link);
                 }
@@ -371,8 +371,7 @@ const Menu = () => {
             >
               <ListLink
                 onClick={event => {
-                  console.log(window.innerWidth);
-                  if (window.innerWidth < 768) {
+                  if (window.innerWidth < 768 && hasSubMenu) {
                     event.preventDefault();
                   }
                 }}
@@ -389,12 +388,20 @@ const Menu = () => {
           );
         })}
         <ListItemFb>
-          <ListSocialLink to="/">
+          <ListSocialLink
+            href="https://www.facebook.com/HetresousleCharme/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={fbLogo} alt="Facebook" />
           </ListSocialLink>
         </ListItemFb>
         <ListItemSocial>
-          <ListSocialLink to="/">
+          <ListSocialLink
+            href="https://www.facebook.com/HetresousleCharme/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={instaLogo} alt="Instagram" />
           </ListSocialLink>
         </ListItemSocial>

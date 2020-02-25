@@ -21,3 +21,6 @@ date: '2020-01-20'
 
 * **Depuis EGLETONS :**
   Suivre la direction de ARGENTAT, rouler 6.5 km après le village de St Martin la Méanne, tourner à gauche direction St Martial-Entraygues.
+
+<br /><br />
+![Carte](../images/map.png)
