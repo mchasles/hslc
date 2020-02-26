@@ -398,7 +398,7 @@ const Menu = () => {
         </ListItemFb>
         <ListItemSocial>
           <ListSocialLink
-            href="https://www.facebook.com/HetresousleCharme/"
+            href="https://www.instagram.com/hetre.sous.le.charme/"
             target="_blank"
             rel="noopener noreferrer"
           >
