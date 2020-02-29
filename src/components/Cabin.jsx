@@ -2,11 +2,11 @@ import React from 'react';
 
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import Img from 'gatsby-image/withIEPolyfill';
 
 const Section = styled.section`
   display: flex;
-  align-items: center;
+  align-items: top;
   position: relative;
   height: 80vh;
   flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
@@ -14,7 +14,6 @@ const Section = styled.section`
 
 const BgImg = styled(Img)`
   width: 50%;
-  height: 60vh;
 `;
 
 const Thumbnail = styled(Img)`
@@ -81,7 +80,7 @@ export default ({ reverse }) => (
             }
           }
         }
-        bgImg: file(relativePath: { eq: "images/cabin.jpg" }) {
+        bgImg: file(relativePath: { eq: "images/pin_en_vert.png" }) {
           childImageSharp {
             fluid(maxWidth: 2880) {
               ...GatsbyImageSharpFluid
@@ -103,7 +102,7 @@ export default ({ reverse }) => (
               <Thumbnail fluid={bgImg} loading="eager" />
             </Thumbnails>
           </Content>
-          <BgImg fluid={bgImg} loading="eager" />
+          <BgImg fluid={bgImg} objectFit="contain" loading="eager" />
         </Section>
       );
     }}

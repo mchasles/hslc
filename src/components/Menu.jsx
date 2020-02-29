@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 import classNames from 'classnames';
 
-import homeLogo from '../images/home.png';
-import fbLogo from '../images/facebook.png';
-import instaLogo from '../images/instagram.png';
+import homeLogo from '../images/menu/home.png';
+import fbLogo from '../images/menu/facebook.png';
+import instaLogo from '../images/menu/instagram.png';
 import { getPageUrl } from '../utils/url';
 import { device } from '../utils/media';
 import dataMenu from '../data/menu.yaml';

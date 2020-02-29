@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Img from 'gatsby-image/withIEPolyfill';
 
 import Page from '../components/Page';
 import Button from '../components/Button';
-import Panoramic from '../components/Panoramic';
 import Cabin from '../components/Cabin';
 
 const Section = styled.section`
@@ -36,9 +35,52 @@ const BookButton = styled(Button)`
   margin-top: 24px;
 `;
 
+const SectionPanoramic = styled.section`
+  display: flex;
+  flex-direction: column;
+
+  ${BookButton} {
+    margin: 0 auto 32px;
+  }
+`;
+
+const headingStyles = css`
+  display: flex;
+  align-items: center;
+  max-width: 60%;
+  margin: 0 auto;
+  color: rgb(42, 38, 27);
+  font-weight: 100;
+  font-style: italic;
+  text-align: center;
+`;
+
+const Heading1 = styled.h1`
+  ${headingStyles}
+  margin: 36px auto;
+  font-size: 18px;
+`;
+
+const Heading2 = styled.h2`
+  ${headingStyles}
+  font-size: 14px;
+  line-height: 24px;
+  flex-grow: 1;
+`;
+
 export default ({ data }) => {
   const bgImg = data.bgImg.childImageSharp.fluid;
-  const logoImg = data.logo.childImageSharp.fixed;
+  const logoImg = data.logoImg.childImageSharp.fixed;
+  const panoramicImg = data.panoramicImg.childImageSharp.fluid;
+  const headings = data.allMarkdownRemark.edges[0]?.node.headings.reduce(
+    (acc, { depth, value }) => {
+      return {
+        ...acc,
+        [depth]: value,
+      };
+    },
+    {}
+  );
 
   return (
     <Page bgImgs={false}>
@@ -53,11 +95,14 @@ export default ({ data }) => {
           />
           <BookButton>Réservez</BookButton>
         </LogoWrapper>
-        <BgImg fluid={bgImg} durationFadeIn={1000} />
+        <BgImg fluid={bgImg} objectPosition="50% 100%" durationFadeIn={1000} />
       </Section>
-      <Section id="prestations">
-        <Panoramic />
-      </Section>
+      <SectionPanoramic>
+        <Heading1 dangerouslySetInnerHTML={{ __html: headings[1] }} />
+        <Img fluid={panoramicImg} loading="eager" />
+        <BookButton>Réservez</BookButton>
+        <Heading2 dangerouslySetInnerHTML={{ __html: headings[2] }} />
+      </SectionPanoramic>
       <Cabin />
       <Cabin reverse />
       <Cabin />
@@ -67,20 +112,39 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    bgImg: file(relativePath: { eq: "images/home.jpg" }) {
+    allMarkdownRemark(
+      filter: { fields: { slug: { eq: "/data/panoramic/" } } }
+    ) {
+      edges {
+        node {
+          headings {
+            value
+            depth
+          }
+        }
+      }
+    }
+    bgImg: file(relativePath: { eq: "images/accueil.png" }) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    logo: file(relativePath: { eq: "images/logo_white.png" }) {
+    logoImg: file(relativePath: { eq: "images/logo_white.png" }) {
       childImageSharp {
         fixed(width: 300) {
           src
           srcSet
           width
           height
+        }
+      }
+    }
+    panoramicImg: file(relativePath: { eq: "images/panoramic.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 2880) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
