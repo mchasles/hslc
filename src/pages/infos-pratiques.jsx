@@ -1,16 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Page from '../components/Page';
-
+import PageHeader from '../components/PageHeader';
 import ToKnow from '../components/infos-pratiques/ToKnow';
 import Prices from '../components/infos-pratiques/Prices';
 import Meal from '../components/infos-pratiques/Meal';
 import Extras from '../components/infos-pratiques/Extras';
 import Activities from '../components/infos-pratiques/Activities';
 
+const Text = styled.span`
+  margin-left: 22%;
+  margin-bottom: -4%;
+`;
+
 const Infos = () => {
   return (
-    <Page>
+    <Page bgImgs={false}>
+      <PageHeader>
+        <Text>Infos</Text> Pratiques
+      </PageHeader>
       <ToKnow />
       <Prices />
       <Meal />

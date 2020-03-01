@@ -1,10 +1,12 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
+
 import Img from 'gatsby-image/withIEPolyfill';
 
 const Wrapper = styled.div`
   position: relative;
+  margin-top: 64px;
 `;
 
 const Title = styled.div`
@@ -18,14 +20,13 @@ const Title = styled.div`
   font-weight: 100;
   white-space: nowrap;
   letter-spacing: 2px;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
 
   span {
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: calc(1.6vw + 1.2vh + 0.6vmin);
     font-weight: 600;
-    margin-left: 30%;
-    margin-bottom: -4%;
     letter-spacing: inherit;
   }
 `;
