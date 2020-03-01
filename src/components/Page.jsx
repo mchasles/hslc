@@ -6,10 +6,10 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Menu from './Menu';
 
 import fontFiles from '../fonts';
-import desChesnaies from '../images/des_chesnaies.jpg';
-import epicea from '../images/epicea.jpg';
-import houxBlond from '../images/houx_blond.jpg';
-import pinEnvert from '../images/pin_en_vert.jpg';
+import desChesnaies from '../images/nos-cabanes/logo-des_chesnaies.jpg';
+import epicea from '../images/nos-cabanes/logo-epicea.jpg';
+import houxBlond from '../images/nos-cabanes/logo-houx_blond.jpg';
+import pinEnvert from '../images/nos-cabanes/logo-pin_en_vert.jpg';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
