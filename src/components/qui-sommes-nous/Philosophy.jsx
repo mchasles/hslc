@@ -2,11 +2,9 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 
-import Section from './Section';
+import Section from '../Section';
 
 const Wrapper = styled(Section)`
-  padding-bottom: 64px;
-
   ul {
     padding-left: 16px;
   }
@@ -17,19 +15,28 @@ const Wrapper = styled(Section)`
   }
 `;
 
-const Activities = () => {
+const Philosophy = () => {
   const data = useStaticQuery(query);
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
-  return <Wrapper id="activites" dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <Wrapper
+      id="philosophie-des-cabanes"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 };
 
-export default Activities;
+export default Philosophy;
 
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: { fields: { slug: { eq: "/data/infos-pratiques/activites/" } } }
+      filter: {
+        fields: {
+          slug: { eq: "/data/qui-sommes-nous/philosophie-des-cabanes/" }
+        }
+      }
     ) {
       edges {
         node {

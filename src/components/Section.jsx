@@ -48,7 +48,7 @@ const Section = styled.div`
     text-align: center;
     color: rgb(100, 90, 80);
     font-family: 'Pintgram Regular';
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 100;
 
     @media ${device.tablet} {

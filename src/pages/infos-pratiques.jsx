@@ -1,11 +1,12 @@
 import React from 'react';
 
 import Page from '../components/Page';
-import ToKnow from '../components/ToKnow';
-import Prices from '../components/Prices';
-import Meal from '../components/Meal';
-import Extras from '../components/Extras';
-import Activities from '../components/Activities';
+
+import ToKnow from '../components/infos-pratiques/ToKnow';
+import Prices from '../components/infos-pratiques/Prices';
+import Meal from '../components/infos-pratiques/Meal';
+import Extras from '../components/infos-pratiques/Extras';
+import Activities from '../components/infos-pratiques/Activities';
 
 const Infos = () => {
   return (

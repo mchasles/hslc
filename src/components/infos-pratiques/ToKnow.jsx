@@ -1,9 +1,9 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import { device } from '../utils/media';
-import Section from './Section';
+import { device } from '../../utils/media';
+import Section from '../Section';
 
 const Wrapper = styled(Section)`
   display: flex;

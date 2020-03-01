@@ -375,11 +375,7 @@ const Menu = () => {
                     event.preventDefault();
                   }
                 }}
-                to={
-                  hasSubMenu
-                    ? `/${link}#${getPageUrl(value[label][0])}`
-                    : `/${link}`
-                }
+                to={hasSubMenu ? `/${link}` : `/${link}`}
               >
                 {label}
               </ListLink>

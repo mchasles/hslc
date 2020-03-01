@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import Section from './Section';
+import Section from '../Section';
 
 const Extras = () => {
   const data = useStaticQuery(query);

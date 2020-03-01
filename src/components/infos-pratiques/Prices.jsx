@@ -1,8 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import Section from './Section';
-import styled from 'styled-components';
+import Section from '../Section';
 
 const Wrapper = styled(Section)`
   th + th,

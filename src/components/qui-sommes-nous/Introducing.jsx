@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 
-import Section from './Section';
+import Section from '../Section';
 
 const Wrapper = styled(Section)``;
 

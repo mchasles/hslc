@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Section from './Section';
-import franceBleu from '../images/france_bleu_limousin_logo.png';
-import logosPresse from '../images/logos_presse.png';
+import Section from '../Section';
+import franceBleu from '../../images/qui-sommes-nous/france_bleu_limousin_logo.png';
+import logosPresse from '../../images/qui-sommes-nous/logos_presse.png';
 
 const Wrapper = styled(Section)`
   p {
@@ -100,7 +100,7 @@ const Medias = () => {
           <iframe
             title="Reportage télévisuel du journal de Jean-Pierre Pernaut"
             src="https://www.youtube.com/embed/zO4sjjabCTg?rel=0"
-            allowfullscreen
+            allowFullScreen
             frameBorder={0}
           ></iframe>
         </Video>
@@ -113,8 +113,8 @@ const Medias = () => {
           <iframe
             title="Reportage réalisé par Christophe Dubois, ambassadeur de la Corrèze"
             src="https://www.youtube.com/embed/igv3rcI5a1E?rel=0"
-            frameborder="0"
-            allowfullscreen=""
+            frameBorder="0"
+            allowFullScreen
           ></iframe>
         </Video>
       </MediaVideo>
@@ -122,7 +122,7 @@ const Medias = () => {
         <p>
           À voir aussi sur France 2 pour l'émission
           <a
-            class="contact_link"
+            className="contact_link"
             href="http://telematin.france2.fr/?page=chronique&amp;id_mot=25&amp;id_article=39525"
             target="_blank"
             rel="noopener noreferrer"
@@ -133,7 +133,7 @@ const Medias = () => {
         </p>
         <p>
           <a
-            class="contact_link"
+            className="contact_link"
             href="http://m.leparisien.fr/environnement/conso/tourisme-des-cabanes-pour-passer-la-nuit-en-pleine-nature-24-08-2015-5001869.php#xtref=http%3A%2F%2Fwww.leparisien.fr%2Fenvironnement%2Fconso%2Ftourisme-des-cabanes-pour-passer-la-nuit-en-pleine-nature-24-08-2015-5001869.php"
             target="_blank"
             rel="noopener noreferrer"
@@ -142,7 +142,7 @@ const Medias = () => {
           </a>{' '}
           a écrit un article sur Hêre sous le Charme ainsi que{' '}
           <a
-            class="contact_link"
+            className="contact_link"
             href="http://shinythoughts.net/?s=corr%C3%A8ze"
             target="_blank"
             rel="noopener noreferrer"
@@ -165,7 +165,7 @@ const Medias = () => {
           {' '}
           Retrouvez nous sur{' '}
           <a
-            class="contact_link"
+            className="contact_link"
             href="http://www.reisreporter.be/2012/08/28/overnachten-in-boomhutten/"
             target="_blank"
             rel="noopener noreferrer"
@@ -174,7 +174,7 @@ const Medias = () => {
           </a>{' '}
           ou sur{' '}
           <a
-            class="contact_link"
+            className="contact_link"
             href="http://www.babel-voyages.com/bons-plans/361-correze-hetre-sous-le-charme-de-ces-adorables-cabanes"
             target="_blank"
             rel="noopener noreferrer"
