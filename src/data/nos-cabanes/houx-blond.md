@@ -9,11 +9,15 @@ Initialement conçue comme un lieu d’habitation à long terme, Houx Blond est 
 
 Située face à la Dordogne, seule au bout de son chemin d’accès, elle est idéale pour qui recherche l’isolement et le calme bienveillant de la forêt.
 
-Les + :
+## Les +
 
 - Un accès par une trappe d’aventurier
 - La poulie pour hisser le petit-déjeuner
 
-Superficie : 24m²
+## Superficie
 
-Capacité : 2 personnes + 1 en supplément (couchette dépliable)
+24m²
+
+## Capacité
+
+2 personnes + 1 en supplément (couchette dépliable)

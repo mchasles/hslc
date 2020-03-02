@@ -11,10 +11,12 @@ Ses dimensions confortables et les nombreux arbres qui la traversent la rendent 
 
 Sa douche en bois massif parachève la cabane dans un esprit boisé de détente et de bien-être.
 
-Les +
+## Les +
 
 - Sa superbe douche en bois
 - Sa position vertigineuse
 - Superficie : 20m²
 
-Capacité : 2 personnes + 1 en supplément (couchette dépliable)
+## Capacité
+
+2 personnes + 1 en supplément (couchette dépliable)

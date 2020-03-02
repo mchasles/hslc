@@ -11,12 +11,16 @@ Elle est composée de deux cabanes reliées entre elles par une grande terrasse,
 
 Petits (et grands) adoreront glisser sur le toboggan intérieur ou se réunir dans l’espace de convivialité avant de profiter d’un petit déjeuner au milieu des bois et en surplomb de la vallée.
 
-Les +
+## Les +
 
 - Sa terrasse spacieuse
 - Son toboggan
 - Sa poulie pour hisser le panier du petit-déjeuner
 
-Superficie : 55m²
+## Superficie
 
-Capacité : 4 personnes + 2 en supplément (canapé lit dépliable)
+55m²
+
+## Capacité
+
+4 personnes + 2 en supplément (canapé lit dépliable)

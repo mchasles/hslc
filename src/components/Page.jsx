@@ -7,7 +7,7 @@ import Menu from './Menu';
 
 import fontFiles from '../fonts';
 import desChesnaies from '../images/nos-cabanes/logo-des_chesnaies.jpg';
-import epicea from '../images/nos-cabanes/logo-epicea.jpg';
+import epicea from '../images/nos-cabanes/logo-epicea_souhait.jpg';
 import houxBlond from '../images/nos-cabanes/logo-houx_blond.jpg';
 import pinEnvert from '../images/nos-cabanes/logo-pin_en_vert.jpg';
 

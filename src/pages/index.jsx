@@ -5,7 +5,10 @@ import Img from 'gatsby-image/withIEPolyfill';
 
 import Page from '../components/Page';
 import Button from '../components/Button';
-import Cabin from '../components/Cabin';
+import EpiceaSouhait from '../components/nos-cabanes/EpiceaSouhait';
+import PinEnVert from '../components/nos-cabanes/PinEnVert';
+import HouxBlond from '../components/nos-cabanes/HouxBlond';
+import DesChesnaies from '../components/nos-cabanes/DesChesnaies';
 
 const Section = styled.section`
   position: relative;
@@ -104,9 +107,10 @@ export default ({ data }) => {
         <BookButton>Réservez</BookButton>
         <Heading2 dangerouslySetInnerHTML={{ __html: headings[2] }} />
       </SectionPanoramic>
-      <Cabin />
-      <Cabin reverse />
-      <Cabin />
+      <EpiceaSouhait />
+      <PinEnVert />
+      <HouxBlond />
+      <DesChesnaies />
     </Page>
   );
 };
