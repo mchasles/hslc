@@ -10,21 +10,25 @@ import pinEnvert from '../images/nos-cabanes/logo-pin_en_vert.jpg';
 const Section = styled.section`
   position: relative;
   display: flex;
-  align-items: top;
   flex-direction: column;
+  align-items: top;
+  margin-bottom: 32px;
 
   @media ${device.mobileL} {
-    flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
+    flex-direction: row;
+    margin-bottom: 64px;
   }
 `;
 
 const BgImg = styled(Img)`
+  position: absolute !important;
   z-index: 2;
-  width: 70%;
-  margin-left: auto;
+  top: 10%;
+  right: 0;
+  width: 56%;
 
   @media ${device.mobileL} {
-    width: 50%;
+    width: 42%;
     margin-left: auto;
   }
 `;
@@ -32,15 +36,14 @@ const BgImg = styled(Img)`
 const LogoImg = styled.img`
   position: absolute;
   z-index: 1;
-  width: 38vw;
-  min-width: 100px;
-  left: 58%;
-  top: -10%;
+  width: 28vw;
+  left: 26%;
+  top: 0;
 
   @media ${device.mobileL} {
     width: 18vw;
     left: 68%;
-    top: -8%;
+    top: 8%;
   }
 `;
 
@@ -60,9 +63,10 @@ const Content = styled.div`
     font-family: 'Pintgram Regular';
     font-size: 2em;
     font-weight: 100;
-    margin: 0;
+    margin-bottom: 26vh;
 
     @media ${device.mobileL} {
+      margin-bottom: 0;
       font-size: 3em;
     }
   }
@@ -78,15 +82,16 @@ const Content = styled.div`
   h2 + ul,
   h2 + p {
     margin-top: 0;
-    @media ${device.mobileL} {
-      margin-top: 0.6em;
-    }
   }
 
   p,
   li {
     color: rgb(80, 80, 75);
     font-size: 0.8em;
+    margin-top: 0;
+    @media ${device.mobileL} {
+      margin-top: 0.6em;
+    }
   }
 
   @media ${device.mobileL} {
@@ -100,21 +105,18 @@ const Description = styled.div`
 
 const Thumbnails = styled.div`
   display: flex;
-
-  @media ${device.mobileL} {
-  }
 `;
 
 const Thumbnail = styled(Img)`
-  width: 16vw;
-  height: 16vw;
-  border-radius: 16vw;
+  width: 18vw;
+  height: 18vw;
+  border-radius: 18vw;
   margin-right: 2vw;
 
   @media ${device.mobileL} {
-    width: 10vw;
-    height: 10vw;
-    border-radius: 10vw;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 8vw;
   }
 `;
 
