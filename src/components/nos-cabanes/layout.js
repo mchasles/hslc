@@ -12,7 +12,8 @@ export const Section = styled.section`
 
   @media ${device.mobileL} {
     flex-direction: row;
-    margin-bottom: 64px;
+    padding-top: 64px;
+    margin-bottom: 0;
   }
 `;
 
@@ -94,6 +95,15 @@ export const Content = styled.div`
     @media ${device.mobileL} {
       margin-top: 0.6em;
     }
+  }
+
+  ul {
+    padding-left: 16px;
+  }
+
+  li {
+    list-style-type: disc;
+    list-style-position: outside;
   }
 
   @media ${device.mobileL} {

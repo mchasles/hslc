@@ -19,7 +19,7 @@ const PinEnVert = () => {
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
   return (
-    <Section>
+    <Section id="pin-en-vert">
       <ContentLeft>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <Thumbnails>

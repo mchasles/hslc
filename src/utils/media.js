@@ -1,3 +1,5 @@
+export const mobileBreakpoint = 768;
+
 const size = {
   mobileS: '320px',
   mobileM: '375px',

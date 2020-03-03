@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 import classNames from 'classnames';
 
+import { mobileBreakpoint } from '../utils/media';
+
 import homeLogo from '../images/menu/home.png';
 import fbLogo from '../images/menu/facebook.png';
 import instaLogo from '../images/menu/instagram.png';
@@ -371,24 +373,22 @@ const Menu = () => {
               key={link}
               id={link}
               onClick={event => {
-                if (window.innerWidth < 768 && hasSubMenu) {
+                if (window.innerWidth < mobileBreakpoint && hasSubMenu) {
                   event.stopPropagation();
                   setExpandedId(expandedId === link ? null : link);
                 } else {
-                  document
-                    .getElementById('main')
-                    .scrollTo({ top: 0, behavior: 'smooth' });
+                  scrollTop();
                 }
               }}
               className={classNames({ expanded: expandedId === link })}
             >
               <ListLink
                 onClick={event => {
-                  if (window.innerWidth < 768 && hasSubMenu) {
+                  if (window.innerWidth < mobileBreakpoint && hasSubMenu) {
                     event.preventDefault();
                   }
                 }}
-                to={hasSubMenu ? `/${link}` : `/${link}`}
+                to={link.charAt(0) === '/' ? `${link}` : `/${link}`}
               >
                 {getLabel(label)}
               </ListLink>

@@ -69,7 +69,6 @@ const Heading2 = styled.h2`
   font-size: 14px;
   line-height: 24px;
   flex-grow: 1;
-  margin-bottom: 64px;
 `;
 
 export default ({ data }) => {

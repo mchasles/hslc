@@ -19,7 +19,7 @@ const EpiceaSouhait = () => {
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
   return (
-    <SectionRight>
+    <SectionRight id="epicea-souhait">
       <ContentRight>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <Thumbnails>
