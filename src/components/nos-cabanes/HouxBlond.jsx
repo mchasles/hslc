@@ -19,7 +19,7 @@ const HouxBlond = () => {
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
   return (
-    <SectionRight>
+    <SectionRight id="houx-blond">
       <ContentRight>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <Thumbnails>

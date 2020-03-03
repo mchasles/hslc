@@ -46,4 +46,23 @@ const removeAccents = str => {
   return str;
 };
 
-export const getPageUrl = str => removeAccents(kebabLowerCase(str));
+export const getPageUrl = (str, parent) => {
+  const strToKebabCase =
+    str.indexOf('(') === -1
+      ? removeAccents(kebabLowerCase(str))
+      : removeAccents(kebabLowerCase(str.substring(0, str.indexOf('('))));
+
+  let link = str.substring(str.indexOf('(') + 1, str.indexOf(')'));
+  link = link.slice(-1) === '#' ? link.concat(strToKebabCase) : link;
+  if (parent) {
+    link = link ? link : parent.concat(strToKebabCase);
+  }
+
+  link = link ? link : strToKebabCase;
+
+  return link === '/' ? '' : link;
+};
+
+export const getLabel = str => {
+  return str.indexOf('(') === -1 ? str : str.substring(0, str.indexOf('('));
+};

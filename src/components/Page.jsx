@@ -101,7 +101,7 @@ const Page = ({ children, bgImgs = true }) => (
             <meta name="robots" content="noindex" />
             <meta name="googlebot" content="noindex" />
           </Helmet>
-          <Wrapper>
+          <Wrapper id="main">
             <GlobalStyle />
             <Menu />
             {children}

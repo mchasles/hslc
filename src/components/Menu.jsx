@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import homeLogo from '../images/menu/home.png';
 import fbLogo from '../images/menu/facebook.png';
 import instaLogo from '../images/menu/instagram.png';
-import { getPageUrl } from '../utils/url';
+import { getLabel, getPageUrl } from '../utils/url';
 import { device } from '../utils/media';
 import dataMenu from '../data/menu.yaml';
 
@@ -325,6 +325,10 @@ const SubListLink = styled(Link)`
   }
 `;
 
+const scrollTop = () => {
+  document.getElementById('main').scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedId, setExpandedId] = useState();
@@ -334,7 +338,7 @@ const Menu = () => {
       <HamburgerButton onClick={() => setIsOpen(!isOpen)} />
       <List onClick={() => setIsOpen(false)}>
         <ListItem>
-          <ListHomeLink to="/">
+          <ListHomeLink to="/" onClick={scrollTop}>
             <img src={homeLogo} alt="Logo" />
           </ListHomeLink>
         </ListItem>
@@ -345,13 +349,18 @@ const Menu = () => {
 
           const subMenu = hasSubMenu ? (
             <SubList>
-              {value[label].map(subLabel => (
+              {value[label].map((subLabel, index) => (
                 <li key={getPageUrl(subLabel)}>
                   <SubListLink
-                    to={`/${getPageUrl(label)}#${getPageUrl(subLabel)}`}
-                    onClick={() => setIsOpen(false)}
+                    to={`${getPageUrl(subLabel, `/${getPageUrl(label)}#`)}`}
+                    onClick={() => {
+                      setIsOpen(false);
+                      if (index === 0) {
+                        scrollTop();
+                      }
+                    }}
                   >
-                    {subLabel}
+                    {getLabel(subLabel)}
                   </SubListLink>
                 </li>
               ))}
@@ -365,6 +374,10 @@ const Menu = () => {
                 if (window.innerWidth < 768 && hasSubMenu) {
                   event.stopPropagation();
                   setExpandedId(expandedId === link ? null : link);
+                } else {
+                  document
+                    .getElementById('main')
+                    .scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
               className={classNames({ expanded: expandedId === link })}
@@ -377,7 +390,7 @@ const Menu = () => {
                 }}
                 to={hasSubMenu ? `/${link}` : `/${link}`}
               >
-                {label}
+                {getLabel(label)}
               </ListLink>
               {subMenu}
             </ListItem>
