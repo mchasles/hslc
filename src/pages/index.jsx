@@ -128,7 +128,7 @@ export const query = graphql`
         }
       }
     }
-    bgImg: file(relativePath: { eq: "images/accueil.png" }) {
+    bgImg: file(relativePath: { eq: "images/accueil.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid
