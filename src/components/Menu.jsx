@@ -8,9 +8,11 @@ import { mobileBreakpoint } from '../utils/media';
 import homeLogo from '../images/menu/home.png';
 import fbLogo from '../images/menu/facebook.png';
 import instaLogo from '../images/menu/instagram.png';
-import { getLabel, getPageUrl } from '../utils/url';
 import { device } from '../utils/media';
 import dataMenu from '../data/menu.yaml';
+
+export const getLink = str => /^(.*)\((.*)\)$/.exec(str)[2];
+export const getLabel = str => /^(.*)\((.*)\)$/.exec(str)[1];
 
 const HamburgerButton = styled.button`
   position: fixed;
@@ -347,14 +349,14 @@ const Menu = () => {
         {dataMenu.map((value, key) => {
           const hasSubMenu = typeof value === 'object';
           const label = hasSubMenu ? Object.keys(value)[0] : value;
-          const link = getPageUrl(label);
+          const link = getLink(label);
 
           const subMenu = hasSubMenu ? (
             <SubList>
               {value[label].map((subLabel, index) => (
-                <li key={getPageUrl(subLabel)}>
+                <li key={getLink(subLabel)}>
                   <SubListLink
-                    to={`${getPageUrl(subLabel, `/${getPageUrl(label)}#`)}`}
+                    to={getLink(subLabel)}
                     onClick={() => {
                       setIsOpen(false);
                       if (index === 0) {
@@ -388,7 +390,7 @@ const Menu = () => {
                     event.preventDefault();
                   }
                 }}
-                to={link.charAt(0) === '/' ? `${link}` : `/${link}`}
+                to={link}
               >
                 {getLabel(label)}
               </ListLink>

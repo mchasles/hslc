@@ -3,7 +3,7 @@ title: 'Chèques cadeaux'
 date: '2020-01-20'
 ---
 
-# Chèques cadeauw
+# Chèques cadeaux
 
 Vous cherchez un cadeau atypique ?
 Offrez un souvenir inoubliable: une nuit dans les arbres.
