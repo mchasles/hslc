@@ -7,6 +7,7 @@ import {
   LogoImg,
   ContentLeft,
   Description,
+  BookCabinButton,
   Thumbnails,
   Thumbnail,
 } from './layout';
@@ -22,6 +23,7 @@ const PinEnVert = () => {
     <Section id="pin-en-vert">
       <ContentLeft>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
+        <BookCabinButton />
         <Thumbnails>
           <Thumbnail fluid={bgImg} loading="eager" />
           <Thumbnail fluid={bgImg} loading="eager" />

@@ -3,6 +3,12 @@ import Img from 'gatsby-image/withIEPolyfill';
 
 import { device } from '../../utils/media';
 
+import BookButton from '../BookButton';
+
+export const BookCabinButton = styled(BookButton)`
+  margin: 1.2em 0 2em 0;
+`;
+
 export const Section = styled.section`
   position: relative;
   display: flex;
@@ -62,11 +68,24 @@ export const Content = styled.div`
   padding: 0 6vw;
 
   h1 {
+    position: relative;
     color: rgb(60, 50, 40);
     font-family: 'Pintgram Regular';
     font-size: 2em;
     font-weight: 100;
     margin-bottom: 26vh;
+
+    &::before {
+      position: absolute;
+      top: -30%;
+      left: 8%;
+      opacity: 0.6;
+      content: 'CABANE';
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.4em;
+      font-weight: 600;
+    }
 
     @media ${device.mobileL} {
       margin-bottom: 0;

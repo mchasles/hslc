@@ -8,6 +8,7 @@ import {
   LogoImg,
   ContentLeft,
   Description,
+  BookCabinButton,
   Thumbnails,
   Thumbnail,
 } from './layout';
@@ -27,6 +28,7 @@ const DesChesnaies = () => {
     <SectionMarginBottom id="des-chesnaies">
       <ContentLeft>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
+        <BookCabinButton />
         <Thumbnails>
           <Thumbnail fluid={bgImg} loading="eager" />
           <Thumbnail fluid={bgImg} loading="eager" />

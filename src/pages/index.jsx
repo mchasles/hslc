@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import Img from 'gatsby-image/withIEPolyfill';
 
 import Page from '../components/Page';
-import Button from '../components/Button';
+import BookButton from '../components/BookButton';
 import EpiceaSouhait from '../components/nos-cabanes/EpiceaSouhait';
 import PinEnVert from '../components/nos-cabanes/PinEnVert';
 import HouxBlond from '../components/nos-cabanes/HouxBlond';
@@ -34,7 +34,7 @@ const LogoWrapper = styled.div`
   overflow: hidden;
 `;
 
-const BookButton = styled(Button)`
+const BookButtonStyled = styled(BookButton)`
   margin-top: 24px;
 `;
 
@@ -42,7 +42,7 @@ const SectionPanoramic = styled.section`
   display: flex;
   flex-direction: column;
 
-  ${BookButton} {
+  ${BookButtonStyled} {
     margin: 0 auto 32px;
   }
 `;
@@ -96,14 +96,14 @@ export default ({ data }) => {
             objectFit="contain"
             style={{ width: '50vw' }}
           />
-          <BookButton>Réservez</BookButton>
+          <BookButtonStyled />
         </LogoWrapper>
         <BgImg fluid={bgImg} objectPosition="50% 100%" durationFadeIn={1000} />
       </Section>
       <SectionPanoramic>
         <Heading1 dangerouslySetInnerHTML={{ __html: headings[1] }} />
         <Img fluid={panoramicImg} loading="eager" />
-        <BookButton>Réservez</BookButton>
+        <BookButtonStyled />
         <Heading2 dangerouslySetInnerHTML={{ __html: headings[2] }} />
       </SectionPanoramic>
       <EpiceaSouhait />

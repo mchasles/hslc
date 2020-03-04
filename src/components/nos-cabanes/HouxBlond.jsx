@@ -7,6 +7,7 @@ import {
   LogoImg,
   ContentRight,
   Description,
+  BookCabinButton,
   Thumbnails,
   Thumbnail,
 } from './layout';
@@ -22,6 +23,7 @@ const HouxBlond = () => {
     <SectionRight id="houx-blond">
       <ContentRight>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
+        <BookCabinButton />
         <Thumbnails>
           <Thumbnail fluid={bgImg} loading="eager" />
           <Thumbnail fluid={bgImg} loading="eager" />
