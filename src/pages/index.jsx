@@ -75,6 +75,7 @@ export default ({ data }) => {
   const bgImg = data.bgImg.childImageSharp.fluid;
   const logoImg = data.logoImg.childImageSharp.fixed;
   const panoramicImg = data.panoramicImg.childImageSharp.fluid;
+
   const headings = data.allMarkdownRemark.edges[0]?.node.headings.reduce(
     (acc, { depth, value }) => {
       return {

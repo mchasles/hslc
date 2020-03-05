@@ -8,10 +8,9 @@ import {
   ContentRight,
   Description,
   BookCabinButton,
-  Thumbnails,
-  Thumbnail,
 } from './layout';
 
+import EpiceaSouhaitPhotos from './EpiceaSouhaitPhotos';
 import epiceaSouhait from '../../images/nos-cabanes/logo-epicea_souhait.jpg';
 
 const EpiceaSouhait = () => {
@@ -24,11 +23,7 @@ const EpiceaSouhait = () => {
       <ContentRight>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
-        <Thumbnails>
-          <Thumbnail fluid={bgImg} loading="eager" />
-          <Thumbnail fluid={bgImg} loading="eager" />
-          <Thumbnail fluid={bgImg} loading="eager" />
-        </Thumbnails>
+        <EpiceaSouhaitPhotos />
         <LogoImg src={epiceaSouhait} alt="Pin en vert" />
       </ContentRight>
       <BgImg fluid={bgImg} objectFit="contain" loading="eager" />

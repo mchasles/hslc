@@ -9,9 +9,8 @@ import {
   ContentLeft,
   Description,
   BookCabinButton,
-  Thumbnails,
-  Thumbnail,
 } from './layout';
+import DesChesnaiesPhotos from './DesChesnaiesPhotos';
 
 import pinEnvert from '../../images/nos-cabanes/logo-des_chesnaies.jpg';
 
@@ -29,11 +28,7 @@ const DesChesnaies = () => {
       <ContentLeft>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
-        <Thumbnails>
-          <Thumbnail fluid={bgImg} loading="eager" />
-          <Thumbnail fluid={bgImg} loading="eager" />
-          <Thumbnail fluid={bgImg} loading="eager" />
-        </Thumbnails>
+        <DesChesnaiesPhotos />
         <LogoImg src={pinEnvert} alt="Des Chesnaies" />
       </ContentLeft>
       <BgImg fluid={bgImg} objectFit="contain" loading="eager" />

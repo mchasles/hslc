@@ -150,13 +150,18 @@ export const Description = styled.div`
 
 export const Thumbnails = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Thumbnail = styled(Img)`
-  width: 18vw;
-  height: 18vw;
-  border-radius: 18vw;
+  width: 14vw;
+  height: 14vw;
+  border-radius: 14vw;
   margin-right: 2vw;
+
+  &:last-child {
+    margin: 0;
+  }
 
   @media ${device.mobileL} {
     width: 8vw;

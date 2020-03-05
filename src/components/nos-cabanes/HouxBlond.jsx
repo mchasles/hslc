@@ -8,9 +8,8 @@ import {
   ContentRight,
   Description,
   BookCabinButton,
-  Thumbnails,
-  Thumbnail,
 } from './layout';
+import HouxBlondPhotos from './HouxBlondPhotos';
 
 import houxBlond from '../../images/nos-cabanes/logo-houx_blond.jpg';
 
@@ -24,11 +23,7 @@ const HouxBlond = () => {
       <ContentRight>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
-        <Thumbnails>
-          <Thumbnail fluid={bgImg} loading="eager" />
-          <Thumbnail fluid={bgImg} loading="eager" />
-          <Thumbnail fluid={bgImg} loading="eager" />
-        </Thumbnails>
+        <HouxBlondPhotos />
         <LogoImg src={houxBlond} alt="Houx Blond" />
       </ContentRight>
       <BgImg fluid={bgImg} objectFit="contain" loading="eager" />

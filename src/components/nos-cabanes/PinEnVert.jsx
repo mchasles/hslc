@@ -8,9 +8,8 @@ import {
   ContentLeft,
   Description,
   BookCabinButton,
-  Thumbnails,
-  Thumbnail,
 } from './layout';
+import PinEnVertPhotos from './PinEnVertPhotos';
 
 import pinEnvert from '../../images/nos-cabanes/logo-pin_en_vert.jpg';
 
@@ -24,11 +23,7 @@ const PinEnVert = () => {
       <ContentLeft>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
-        <Thumbnails>
-          <Thumbnail fluid={bgImg} loading="eager" />
-          <Thumbnail fluid={bgImg} loading="eager" />
-          <Thumbnail fluid={bgImg} loading="eager" />
-        </Thumbnails>
+        <PinEnVertPhotos />
         <LogoImg src={pinEnvert} alt="Pin en vert" />
       </ContentLeft>
       <BgImg fluid={bgImg} objectFit="contain" loading="eager" />
