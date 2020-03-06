@@ -6,7 +6,6 @@ import Img from 'gatsby-image/withIEPolyfill';
 
 const Wrapper = styled.div`
   position: relative;
-  margin-top: 64px;
 `;
 
 const Title = styled.div`

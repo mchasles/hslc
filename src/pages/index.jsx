@@ -12,11 +12,11 @@ import DesChesnaies from '../components/nos-cabanes/DesChesnaies';
 
 const Section = styled.section`
   position: relative;
-  height: 100vh;
+  height: 110vh;
 `;
 
 const BgImg = styled(Img)`
-  height: 100vh;
+  height: 100%;
 `;
 
 const LogoWrapper = styled.div`

@@ -46,7 +46,7 @@ const Section = styled.div`
     padding-top: 64px;
 
     text-align: center;
-    color: rgb(100, 90, 80);
+    color: rgb(60, 50, 40);
     font-family: 'Pintgram Regular';
     font-size: 38px;
     font-weight: 100;
@@ -57,7 +57,7 @@ const Section = styled.div`
   }
 
   h2 {
-    color: rgb(100, 90, 80);
+    color: rgb(60, 50, 40);
     font-family: 'Pintgram Regular';
     font-size: 28px;
     font-weight: 100;
