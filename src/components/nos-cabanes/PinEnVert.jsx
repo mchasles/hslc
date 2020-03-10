@@ -48,7 +48,7 @@ const query = graphql`
         }
       }
     }
-    bgImg: file(relativePath: { eq: "images/nos-cabanes/pin_en_vert.png" }) {
+    bgImg: file(relativePath: { eq: "images/nos-cabanes/pin_en_vert.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid

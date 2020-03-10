@@ -146,7 +146,7 @@ export const query = graphql`
         }
       }
     }
-    panoramicImg: file(relativePath: { eq: "images/panoramic.png" }) {
+    panoramicImg: file(relativePath: { eq: "images/panoramic.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid

@@ -53,7 +53,7 @@ const query = graphql`
         }
       }
     }
-    bgImg: file(relativePath: { eq: "images/nos-cabanes/des_chesnaies.png" }) {
+    bgImg: file(relativePath: { eq: "images/nos-cabanes/des_chesnaies.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid

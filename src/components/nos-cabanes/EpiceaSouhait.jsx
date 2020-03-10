@@ -48,7 +48,7 @@ const query = graphql`
         }
       }
     }
-    bgImg: file(relativePath: { eq: "images/nos-cabanes/epicea_souhait.png" }) {
+    bgImg: file(relativePath: { eq: "images/nos-cabanes/epicea_souhait.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid

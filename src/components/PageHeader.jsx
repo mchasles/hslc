@@ -44,7 +44,7 @@ const PageHeader = ({ children }) => {
 
 export const query = graphql`
   query {
-    panoramicImg: file(relativePath: { eq: "images/panoramic.png" }) {
+    panoramicImg: file(relativePath: { eq: "images/panoramic.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid
