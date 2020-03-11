@@ -1,19 +1,12 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import { Thumbnails, Thumbnail } from './layout';
+import Photos from './Photos';
 
 const PinEnVertPhotos = () => {
   const data = useStaticQuery(query);
-  const photos = data.photos.edges;
 
-  return (
-    <Thumbnails>
-      {photos.map(({ node: { name, childImageSharp: { fluid } } }) => (
-        <Thumbnail key={name} fluid={fluid} loading="eager" />
-      ))}
-    </Thumbnails>
-  );
+  return <Photos photos={data.photos.edges} />;
 };
 
 export default PinEnVertPhotos;

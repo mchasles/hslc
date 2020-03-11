@@ -157,11 +157,6 @@ export const Thumbnail = styled(Img)`
   width: 14vw;
   height: 14vw;
   border-radius: 14vw;
-  margin-right: 2vw;
-
-  &:last-child {
-    margin: 0;
-  }
 
   @media ${device.mobileL} {
     width: 8vw;

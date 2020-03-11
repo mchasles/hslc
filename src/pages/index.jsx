@@ -9,6 +9,7 @@ import EpiceaSouhait from '../components/nos-cabanes/EpiceaSouhait';
 import PinEnVert from '../components/nos-cabanes/PinEnVert';
 import HouxBlond from '../components/nos-cabanes/HouxBlond';
 import DesChesnaies from '../components/nos-cabanes/DesChesnaies';
+import { ModalProvider } from '../components/Modal';
 
 const Section = styled.section`
   position: relative;
@@ -85,33 +86,38 @@ export default ({ data }) => {
     },
     {}
   );
-
   return (
-    <Page bgImgs={false}>
-      <Section id="nos-cabanes">
-        <LogoWrapper>
-          <Img
-            fixed={logoImg}
-            fadeIn={false}
-            durationFadeIn={50000}
-            objectFit="contain"
-            style={{ width: '50vw' }}
+    <ModalProvider>
+      <Page bgImgs={false}>
+        <Section id="nos-cabanes">
+          <LogoWrapper>
+            <Img
+              fixed={logoImg}
+              fadeIn={false}
+              durationFadeIn={50000}
+              objectFit="contain"
+              style={{ width: '50vw' }}
+            />
+            <BookButtonStyled />
+          </LogoWrapper>
+          <BgImg
+            fluid={bgImg}
+            objectPosition="50% 100%"
+            durationFadeIn={1000}
           />
+        </Section>
+        <SectionPanoramic>
+          <Heading1 dangerouslySetInnerHTML={{ __html: headings[1] }} />
+          <Img fluid={panoramicImg} loading="eager" />
           <BookButtonStyled />
-        </LogoWrapper>
-        <BgImg fluid={bgImg} objectPosition="50% 100%" durationFadeIn={1000} />
-      </Section>
-      <SectionPanoramic>
-        <Heading1 dangerouslySetInnerHTML={{ __html: headings[1] }} />
-        <Img fluid={panoramicImg} loading="eager" />
-        <BookButtonStyled />
-        <Heading2 dangerouslySetInnerHTML={{ __html: headings[2] }} />
-      </SectionPanoramic>
-      <EpiceaSouhait />
-      <PinEnVert />
-      <HouxBlond />
-      <DesChesnaies />
-    </Page>
+          <Heading2 dangerouslySetInnerHTML={{ __html: headings[2] }} />
+        </SectionPanoramic>
+        <EpiceaSouhait />
+        <PinEnVert />
+        <HouxBlond />
+        <DesChesnaies />
+      </Page>
+    </ModalProvider>
   );
 };
 
