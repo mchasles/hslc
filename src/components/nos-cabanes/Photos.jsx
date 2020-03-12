@@ -123,7 +123,7 @@ const Photos = ({ photos: photosProp }) => {
         </ThumnailButton>
       ))}
       {isModalOpen && (
-        <Modal>
+        <Modal onOverlayClick={() => setIsModalOpen(false)}>
           <NavButtonLeft type="button" onClick={onArrowLeft}>
             &lsaquo;
           </NavButtonLeft>

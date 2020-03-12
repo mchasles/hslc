@@ -22,18 +22,12 @@ export const ModalProvider = ({ children }) => {
   );
 };
 
-export const Modal = ({
-  onClose,
-  onArrowLeft,
-  onArrowRight,
-  children,
-  ...props
-}) => {
+export const Modal = ({ onClose, onOverlayClick, children, ...props }) => {
   const { modalNode } = useContext(Context);
 
   return modalNode
     ? ReactDOM.createPortal(
-        <Overlay>
+        <Overlay onClick={onOverlayClick}>
           <Dialog {...props}>{children}</Dialog>
         </Overlay>,
         modalNode
