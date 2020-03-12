@@ -12,7 +12,8 @@ export const BookCabinButton = styled(BookButton)`
 export const Section = styled.section`
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+
   align-items: top;
   margin-bottom: 32px;
 
@@ -30,14 +31,7 @@ export const SectionRight = styled(Section)`
 `;
 
 export const BgImg = styled(Img)`
-  position: absolute !important;
-  z-index: 2;
-  top: 10%;
-  right: 0;
-  width: 56%;
-
   @media ${device.mobileL} {
-    position: relative !important;
     width: 42%;
     flex-grow: 1;
     img {
@@ -73,7 +67,6 @@ export const Content = styled.div`
     font-family: 'Pintgram Regular';
     font-size: 2em;
     font-weight: 100;
-    margin-bottom: 26vh;
 
     &::before {
       position: absolute;
@@ -88,7 +81,6 @@ export const Content = styled.div`
     }
 
     @media ${device.mobileL} {
-      margin-bottom: 0;
       font-size: 3em;
     }
   }
