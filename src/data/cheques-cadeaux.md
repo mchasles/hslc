@@ -12,3 +12,6 @@ Nos chèques cadeaux sont valables 12 mois, entièrement personnalisables :
 Une nuit dans une cabane, panier repas, pack romantique, champagne, etc...
 
 Nuit de noces, fiançailles, anniversaires , toutes les occasions sont bonnes, n'hésitez pas à [nous contacter](/contact).
+
+<br /><br />
+![Cheque cadeau](../images/cheque-cadeau.png)
