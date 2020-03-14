@@ -146,9 +146,9 @@ export const Thumbnails = styled.div`
 `;
 
 export const Thumbnail = styled(Img)`
-  width: 14vw;
-  height: 14vw;
-  border-radius: 14vw;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
 
   @media ${device.mobileL} {
     width: 8vw;

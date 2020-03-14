@@ -4,12 +4,17 @@ import styled from 'styled-components';
 import { Modal } from '../Modal';
 import Img from 'gatsby-image/withIEPolyfill';
 import { Thumbnails, Thumbnail } from './layout';
+import { device } from '../../utils/media';
 
 const ThumnailButton = styled.button`
   border: none;
   padding: 0;
   background-color: transparent;
-  margin-right: 2vw;
+  margin-right: 16px;
+
+  @media ${device.mobileL} {
+    margin-right: 32px;
+  }
 
   &:active,
   &:focus {
