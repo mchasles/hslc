@@ -108,7 +108,7 @@ export default ({ data }) => {
         </Section>
         <SectionPanoramic>
           <Heading1 dangerouslySetInnerHTML={{ __html: headings[1] }} />
-          <Img fluid={panoramicImg} loading="eager" />
+          <Img fluid={panoramicImg} />
           <BookButtonStyled />
           <Heading2 dangerouslySetInnerHTML={{ __html: headings[2] }} />
         </SectionPanoramic>

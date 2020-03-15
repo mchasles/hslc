@@ -31,7 +31,7 @@ const DesChesnaies = () => {
         <DesChesnaiesPhotos />
         <LogoImg src={pinEnvert} alt="Des Chesnaies" />
       </ContentLeft>
-      <BgImg fluid={bgImg} objectFit="contain" loading="eager" />
+      <BgImg fluid={bgImg} objectFit="contain" />
     </SectionMarginBottom>
   );
 };

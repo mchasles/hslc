@@ -26,7 +26,7 @@ const HouxBlond = () => {
         <HouxBlondPhotos />
         <LogoImg src={houxBlond} alt="Houx Blond" />
       </ContentRight>
-      <BgImg fluid={bgImg} objectFit="contain" loading="eager" />
+      <BgImg fluid={bgImg} objectFit="contain" />
     </SectionRight>
   );
 };

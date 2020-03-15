@@ -26,7 +26,7 @@ const PinEnVert = () => {
         <PinEnVertPhotos />
         <LogoImg src={pinEnvert} alt="Pin en vert" />
       </ContentLeft>
-      <BgImg fluid={bgImg} objectFit="contain" loading="eager" />
+      <BgImg fluid={bgImg} objectFit="contain" />
     </Section>
   );
 };

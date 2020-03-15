@@ -124,7 +124,7 @@ const Photos = ({ photos: photosProp }) => {
             setIsModalOpen(true);
           }}
         >
-          <Thumbnail fluid={fluid} loading="eager" />
+          <Thumbnail fluid={fluid} />
         </ThumnailButton>
       ))}
       {isModalOpen && (

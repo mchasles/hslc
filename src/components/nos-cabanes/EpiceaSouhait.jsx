@@ -26,7 +26,7 @@ const EpiceaSouhait = () => {
         <EpiceaSouhaitPhotos />
         <LogoImg src={epiceaSouhait} alt="Pin en vert" />
       </ContentRight>
-      <BgImg fluid={bgImg} objectFit="contain" loading="eager" />
+      <BgImg fluid={bgImg} objectFit="contain" />
     </SectionRight>
   );
 };
