@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Photos from './Photos';
@@ -24,7 +23,7 @@ export const query = graphql`
         node {
           name
           childImageSharp {
-            fluid(maxWidth: 1920, quality: 90) {
+            fluid(maxWidth: 1680, quality: 80) {
               ...GatsbyImageSharpFluid
             }
           }

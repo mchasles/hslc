@@ -49,6 +49,7 @@ const Wrapper = styled.div`
   overflow-y: scroll;
   scroll-behavior: smooth;
 `;
+
 const BgImg = styled.img`
   position: absolute;
   width: 12vw;

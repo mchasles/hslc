@@ -139,20 +139,3 @@ export const ContentRight = styled(Content)`
 export const Description = styled.div`
   z-index: 2;
 `;
-
-export const Thumbnails = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-export const Thumbnail = styled(Img)`
-  width: 80px;
-  height: 80px;
-  border-radius: 80px;
-
-  @media ${device.mobileL} {
-    width: 8vw;
-    height: 8vw;
-    border-radius: 8vw;
-  }
-`;

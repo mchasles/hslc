@@ -3,56 +3,8 @@ import styled from 'styled-components';
 
 import { Modal } from '../Modal';
 import Img from 'gatsby-image/withIEPolyfill';
-import { Thumbnails, Thumbnail } from './layout';
+
 import { device } from '../../utils/media';
-
-const ThumnailButton = styled.button`
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  margin-right: 16px;
-
-  @media ${device.mobileL} {
-    margin-right: 32px;
-  }
-
-  &:active,
-  &:focus {
-    outline: 0;
-  }
-
-  &:last-child {
-    margin: 0;
-  }
-`;
-
-const NavButton = styled.button`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  font-family: 'Pintgram Regular';
-  font-size: calc(4vw + 4vh + 0.8vmin);
-  height: 100vh;
-  width: 10vw;
-  color: rgba(255, 255, 255, 0.6);
-  text-align: center;
-
-  &:active,
-  &:focus {
-    outline: 0;
-  }
-`;
-
-const NavButtonLeft = styled(NavButton)`
-  left: -10vw;
-`;
-
-const NavButtonRight = styled(NavButton)`
-  right: -10vw;
-`;
 
 const Photos = ({ photos: photosProp }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
@@ -146,5 +98,70 @@ const Photos = ({ photos: photosProp }) => {
     </Thumbnails>
   );
 };
+
+const ThumnailButton = styled.button`
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  margin-right: 16px;
+
+  @media ${device.mobileL} {
+    margin-right: 32px;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+`;
+
+const NavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  font-family: 'Pintgram Regular';
+  font-size: calc(4vw + 4vh + 0.8vmin);
+  height: 100vh;
+  width: 10vw;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+`;
+
+const NavButtonLeft = styled(NavButton)`
+  left: -10vw;
+`;
+
+const NavButtonRight = styled(NavButton)`
+  right: -10vw;
+`;
+
+const Thumbnails = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Thumbnail = styled(Img)`
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+
+  @media ${device.mobileL} {
+    width: 8vw;
+    height: 8vw;
+    border-radius: 8vw;
+  }
+`;
 
 export default Photos;
