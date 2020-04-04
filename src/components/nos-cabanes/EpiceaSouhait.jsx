@@ -1,11 +1,13 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
+import { getCabinData } from '../../utils/cabin';
+
 import {
   SectionRight,
   BgImg,
   LogoImg,
-  ContentRight,
+  Content,
   Description,
   BookCabinButton,
 } from './layout';
@@ -15,18 +17,17 @@ import epiceaSouhait from '../../images/nos-cabanes/logo-epicea_souhait.jpg';
 
 const EpiceaSouhait = () => {
   const data = useStaticQuery(query);
-  const bgImg = data?.bgImg.childImageSharp.fluid;
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const { html, img } = getCabinData(data);
 
   return (
     <SectionRight id="epicea-souhait">
-      <ContentRight>
+      <Content>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
         <EpiceaSouhaitPhotos />
         <LogoImg src={epiceaSouhait} alt="Pin en vert" />
-      </ContentRight>
-      <BgImg fluid={bgImg} objectFit="contain" />
+      </Content>
+      <BgImg fluid={img} objectFit="contain" />
     </SectionRight>
   );
 };
@@ -38,22 +39,10 @@ const query = graphql`
     allMarkdownRemark(
       filter: { fields: { slug: { eq: "/data/nos-cabanes/epicea-souhait/" } } }
     ) {
-      edges {
-        node {
-          headings {
-            value
-            depth
-          }
-          html
-        }
-      }
+      ...CabinContent
     }
     bgImg: file(relativePath: { eq: "images/nos-cabanes/epicea_souhait.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2880) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+      ...CabinImage
     }
   }
 `;

@@ -122,20 +122,6 @@ export const Content = styled.div`
   }
 `;
 
-export const ContentLeft = styled(Content)`
-  @media ${device.mobileL} {
-    padding-left: 6vw;
-    margin-left: 2%;
-  }
-`;
-
-export const ContentRight = styled(Content)`
-  @media ${device.mobileL} {
-    padding-right: 6vw;
-    margin-right: 2%;
-  }
-`;
-
 export const Description = styled.div`
   z-index: 2;
 `;

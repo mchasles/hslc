@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
+import { getCabinData } from '../../utils/cabin';
+
 import {
   Section,
   BgImg,
   LogoImg,
-  ContentLeft,
+  Content,
   Description,
   BookCabinButton,
 } from './layout';
@@ -20,18 +22,17 @@ const SectionMarginBottom = styled(Section)`
 
 const DesChesnaies = () => {
   const data = useStaticQuery(query);
-  const bgImg = data?.bgImg.childImageSharp.fluid;
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const { html, img } = getCabinData(data);
 
   return (
     <SectionMarginBottom id="des-chesnaies">
-      <ContentLeft>
+      <Content>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
         <DesChesnaiesPhotos />
         <LogoImg src={pinEnvert} alt="Des Chesnaies" />
-      </ContentLeft>
-      <BgImg fluid={bgImg} objectFit="contain" />
+      </Content>
+      <BgImg fluid={img} objectFit="contain" />
     </SectionMarginBottom>
   );
 };
@@ -43,22 +44,10 @@ const query = graphql`
     allMarkdownRemark(
       filter: { fields: { slug: { eq: "/data/nos-cabanes/des-chesnaies/" } } }
     ) {
-      edges {
-        node {
-          headings {
-            value
-            depth
-          }
-          html
-        }
-      }
+      ...CabinContent
     }
     bgImg: file(relativePath: { eq: "images/nos-cabanes/des_chesnaies.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2880) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+      ...CabinImage
     }
   }
 `;
