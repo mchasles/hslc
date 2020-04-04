@@ -88,7 +88,7 @@ export default ({ data }) => {
   );
   return (
     <ModalProvider>
-      <Page bgImgs={false}>
+      <Page bgImgs={false} marginBottom>
         <Section id="nos-cabanes">
           <LogoWrapper>
             <Img

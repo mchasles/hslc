@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { getCabinData } from '../../utils/cabin';
 
 import {
-  SectionRight,
+  Section,
   BgImg,
   LogoImg,
   Content,
@@ -20,7 +20,7 @@ const HouxBlond = () => {
   const { html, img } = getCabinData(data);
 
   return (
-    <SectionRight id="houx-blond">
+    <Section id="houx-blond" reverse>
       <Content>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
@@ -28,7 +28,7 @@ const HouxBlond = () => {
         <LogoImg src={houxBlond} alt="Houx Blond" />
       </Content>
       <BgImg fluid={img} objectFit="contain" />
-    </SectionRight>
+    </Section>
   );
 };
 

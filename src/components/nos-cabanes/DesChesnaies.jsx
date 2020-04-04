@@ -16,16 +16,12 @@ import DesChesnaiesPhotos from './DesChesnaiesPhotos';
 
 import pinEnvert from '../../images/nos-cabanes/logo-des_chesnaies.jpg';
 
-const SectionMarginBottom = styled(Section)`
-  padding-bottom: 128px;
-`;
-
 const DesChesnaies = () => {
   const data = useStaticQuery(query);
   const { html, img } = getCabinData(data);
 
   return (
-    <SectionMarginBottom id="des-chesnaies">
+    <Section id="des-chesnaies">
       <Content>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
@@ -33,7 +29,7 @@ const DesChesnaies = () => {
         <LogoImg src={pinEnvert} alt="Des Chesnaies" />
       </Content>
       <BgImg fluid={img} objectFit="contain" />
-    </SectionMarginBottom>
+    </Section>
   );
 };
 

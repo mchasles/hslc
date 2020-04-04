@@ -18,15 +18,9 @@ export const Section = styled.section`
   margin-bottom: 32px;
 
   @media ${device.mobileL} {
-    flex-direction: row;
+    flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
     padding-top: 64px;
     margin-bottom: 0;
-  }
-`;
-
-export const SectionRight = styled(Section)`
-  @media ${device.mobileL} {
-    flex-direction: row-reverse;
   }
 `;
 

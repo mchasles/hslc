@@ -48,6 +48,7 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  padding-bottom: ${({ marginBottom }) => (marginBottom ? '128px' : '0')};
 `;
 
 const BgImg = styled.img`
@@ -86,7 +87,7 @@ const query = graphql`
   }
 `;
 
-const Page = ({ children, bgImgs = true }) => (
+const Page = ({ children, bgImgs = true, marginBottom = false }) => (
   <StaticQuery
     query={query}
     render={data => {
@@ -102,7 +103,7 @@ const Page = ({ children, bgImgs = true }) => (
             <meta name="robots" content="noindex" />
             <meta name="googlebot" content="noindex" />
           </Helmet>
-          <Wrapper id="main">
+          <Wrapper id="main" marginBottom={marginBottom}>
             <GlobalStyle />
             <Menu />
             {children}
