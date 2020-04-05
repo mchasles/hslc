@@ -17,7 +17,7 @@ export const cabinContentFragment = graphql`
 export const cabinImageFragment = graphql`
   fragment CabinImage on File {
     childImageSharp {
-      fluid(maxWidth: 2880) {
+      fluid(maxWidth: 2880, quality: 70) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -40,12 +40,12 @@ export const cabinPhotosFragment = graphql`
       node {
         name
         photo: childImageSharp {
-          fluid(maxWidth: 1680, quality: 80) {
+          fluid(maxWidth: 1680, quality: 70) {
             ...GatsbyImageSharpFluid
           }
         }
         thumb: childImageSharp {
-          fluid(maxWidth: 160, quality: 80) {
+          fluid(maxWidth: 160, quality: 70) {
             ...GatsbyImageSharpFluid
           }
         }
