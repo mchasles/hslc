@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { Modal } from '../Modal';
+import { Modal } from './Modal';
 import Img from 'gatsby-image/withIEPolyfill';
 
-import { device } from '../../utils/media';
+import { device } from '../utils/media';
 
 const Photos = ({ photos: photosProp }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
@@ -67,7 +67,7 @@ const Photos = ({ photos: photosProp }) => {
 
   return (
     <Thumbnails>
-      {photos.map(({ name, photo, thumb }, index) => (
+      {photos.map(({ name, thumb }, index) => (
         <ThumnailButton
           key={name}
           type="button"

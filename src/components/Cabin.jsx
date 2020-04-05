@@ -1,15 +1,33 @@
+import React from 'react';
+
 import styled from 'styled-components';
 import Img from 'gatsby-image/withIEPolyfill';
 
-import { device } from '../../utils/media';
+import { device } from '../utils/media';
+import BookButton from './BookButton';
+import Photos from './Photos';
 
-import BookButton from '../BookButton';
+const Cabin = ({ id, title, reverse = false, html, img, logo, photos }) => {
+  return (
+    <Section id={id} reverse={reverse}>
+      <Content>
+        <Description dangerouslySetInnerHTML={{ __html: html }} />
+        <BookCabinButton />
+        <Photos photos={photos} />
+        <LogoImg fluid={logo} alt={title} />
+      </Content>
+      <BgImg fluid={img} objectFit="contain" />
+    </Section>
+  );
+};
 
-export const BookCabinButton = styled(BookButton)`
+export default Cabin;
+
+const BookCabinButton = styled(BookButton)`
   margin: 1.2em 0 2em 0;
 `;
 
-export const Section = styled.section`
+const Section = styled.section`
   position: relative;
   display: flex;
   flex-direction: column-reverse;
@@ -24,7 +42,7 @@ export const Section = styled.section`
   }
 `;
 
-export const BgImg = styled(Img)`
+const BgImg = styled(Img)`
   @media ${device.mobileL} {
     width: 42%;
     flex-grow: 1;
@@ -34,7 +52,7 @@ export const BgImg = styled(Img)`
   }
 `;
 
-export const LogoImg = styled(Img)`
+const LogoImg = styled(Img)`
   position: absolute !important;
   z-index: 1;
   width: 24vw;
@@ -48,7 +66,7 @@ export const LogoImg = styled(Img)`
   }
 `;
 
-export const Content = styled.div`
+const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -116,6 +134,6 @@ export const Content = styled.div`
   }
 `;
 
-export const Description = styled.div`
+const Description = styled.div`
   z-index: 2;
 `;

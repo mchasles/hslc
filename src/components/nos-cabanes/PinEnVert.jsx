@@ -1,33 +1,23 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
+import Cabin from '../Cabin';
 import { getCabinData } from '../../utils/cabin';
-
-import {
-  Section,
-  BgImg,
-  LogoImg,
-  Content,
-  Description,
-  BookCabinButton,
-} from './layout';
-
-import Photos from './Photos';
 
 const PinEnVert = () => {
   const data = useStaticQuery(query);
   const { html, img, logo, photos } = getCabinData(data);
 
   return (
-    <Section id="pin-en-vert">
-      <Content>
-        <Description dangerouslySetInnerHTML={{ __html: html }} />
-        <BookCabinButton />
-        <Photos photos={photos} />
-        <LogoImg fluid={logo} alt="Pin en vert" />
-      </Content>
-      <BgImg fluid={img} objectFit="contain" />
-    </Section>
+    <Cabin
+      id="pin-en-vert"
+      title="Pin en vert"
+      reverse
+      html={html}
+      img={img}
+      logo={logo}
+      photos={photos}
+    />
   );
 };
 
