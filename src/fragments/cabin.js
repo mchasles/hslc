@@ -23,3 +23,13 @@ export const cabinImageFragment = graphql`
     }
   }
 `;
+
+export const cabinLogoFragment = graphql`
+  fragment CabinLogo on File {
+    childImageSharp {
+      fluid(maxWidth: 360) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`;

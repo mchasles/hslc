@@ -12,12 +12,9 @@ import {
   BookCabinButton,
 } from './layout';
 import HouxBlondPhotos from './HouxBlondPhotos';
-
-import houxBlond from '../../images/nos-cabanes/logo-houx_blond.jpg';
-
 const HouxBlond = () => {
   const data = useStaticQuery(query);
-  const { html, img } = getCabinData(data);
+  const { html, img, logo } = getCabinData(data);
 
   return (
     <Section id="houx-blond" reverse>
@@ -25,7 +22,7 @@ const HouxBlond = () => {
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
         <HouxBlondPhotos />
-        <LogoImg src={houxBlond} alt="Houx Blond" />
+        <LogoImg fluid={logo} alt="Houx Blond" />
       </Content>
       <BgImg fluid={img} objectFit="contain" />
     </Section>
@@ -41,8 +38,11 @@ const query = graphql`
     ) {
       ...CabinContent
     }
-    bgImg: file(relativePath: { eq: "images/nos-cabanes/houx_blond.jpg" }) {
+    img: file(relativePath: { eq: "images/nos-cabanes/houx_blond.jpg" }) {
       ...CabinImage
+    }
+    logo: file(relativePath: { eq: "images/nos-cabanes/logo-houx_blond.jpg" }) {
+      ...CabinLogo
     }
   }
 `;

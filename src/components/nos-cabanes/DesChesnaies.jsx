@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import { getCabinData } from '../../utils/cabin';
@@ -14,11 +13,9 @@ import {
 } from './layout';
 import DesChesnaiesPhotos from './DesChesnaiesPhotos';
 
-import pinEnvert from '../../images/nos-cabanes/logo-des_chesnaies.jpg';
-
 const DesChesnaies = () => {
   const data = useStaticQuery(query);
-  const { html, img } = getCabinData(data);
+  const { html, img, logo } = getCabinData(data);
 
   return (
     <Section id="des-chesnaies">
@@ -26,7 +23,7 @@ const DesChesnaies = () => {
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
         <DesChesnaiesPhotos />
-        <LogoImg src={pinEnvert} alt="Des Chesnaies" />
+        <LogoImg fluid={logo} alt="Des Chesnaies" />
       </Content>
       <BgImg fluid={img} objectFit="contain" />
     </Section>
@@ -42,8 +39,13 @@ const query = graphql`
     ) {
       ...CabinContent
     }
-    bgImg: file(relativePath: { eq: "images/nos-cabanes/des_chesnaies.jpg" }) {
+    img: file(relativePath: { eq: "images/nos-cabanes/des_chesnaies.jpg" }) {
       ...CabinImage
+    }
+    logo: file(
+      relativePath: { eq: "images/nos-cabanes/logo-des_chesnaies.jpg" }
+    ) {
+      ...CabinLogo
     }
   }
 `;

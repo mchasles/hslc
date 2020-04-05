@@ -34,8 +34,8 @@ export const BgImg = styled(Img)`
   }
 `;
 
-export const LogoImg = styled.img`
-  position: absolute;
+export const LogoImg = styled(Img)`
+  position: absolute !important;
   z-index: 1;
   width: 24vw;
   left: 26%;
