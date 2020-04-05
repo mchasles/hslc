@@ -14,9 +14,10 @@ const Photos = ({ photos: photosProp }) => {
     ({
       node: {
         name,
-        childImageSharp: { fluid },
+        photo: { fluid: photo },
+        thumb: { fluid: thumb },
       },
-    }) => ({ name, fluid })
+    }) => ({ name, photo, thumb })
   );
 
   const onArrowLeft = useCallback(
@@ -66,7 +67,7 @@ const Photos = ({ photos: photosProp }) => {
 
   return (
     <Thumbnails>
-      {photos.map(({ name, fluid }, index) => (
+      {photos.map(({ name, photo, thumb }, index) => (
         <ThumnailButton
           key={name}
           type="button"
@@ -76,7 +77,7 @@ const Photos = ({ photos: photosProp }) => {
             setIsModalOpen(true);
           }}
         >
-          <Thumbnail fluid={fluid} />
+          <Thumbnail fluid={thumb} />
         </ThumnailButton>
       ))}
       {isModalOpen && (
@@ -85,7 +86,7 @@ const Photos = ({ photos: photosProp }) => {
             &lsaquo;
           </NavButtonLeft>
           <Img
-            fluid={photos[currentPhoto].fluid}
+            fluid={photos[currentPhoto].photo}
             fadeIn={false}
             durationFadeIn={1000}
             objectFit="contain"

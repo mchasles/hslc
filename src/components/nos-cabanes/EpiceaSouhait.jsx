@@ -12,18 +12,18 @@ import {
   BookCabinButton,
 } from './layout';
 
-import EpiceaSouhaitPhotos from './EpiceaSouhaitPhotos';
+import Photos from './Photos';
 
 const EpiceaSouhait = () => {
   const data = useStaticQuery(query);
-  const { html, img, logo } = getCabinData(data);
+  const { html, img, logo, photos } = getCabinData(data);
 
   return (
     <Section id="epicea-souhait" reverse>
       <Content>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
-        <EpiceaSouhaitPhotos />
+        <Photos photos={photos} />
         <LogoImg fluid={logo} alt="Pin en vert" />
       </Content>
       <BgImg fluid={img} objectFit="contain" />
@@ -47,6 +47,14 @@ const query = graphql`
       relativePath: { eq: "images/nos-cabanes/logo-epicea_souhait.jpg" }
     ) {
       ...CabinLogo
+    }
+    photos: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(jpeg)/" }
+        absolutePath: { regex: "/images/nos-cabanes/photos/epicea-souhait/" }
+      }
+    ) {
+      ...CabinPhotos
     }
   }
 `;

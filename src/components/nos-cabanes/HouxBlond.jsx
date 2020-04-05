@@ -11,17 +11,19 @@ import {
   Description,
   BookCabinButton,
 } from './layout';
-import HouxBlondPhotos from './HouxBlondPhotos';
+
+import Photos from './Photos';
+
 const HouxBlond = () => {
   const data = useStaticQuery(query);
-  const { html, img, logo } = getCabinData(data);
+  const { html, img, logo, photos } = getCabinData(data);
 
   return (
     <Section id="houx-blond" reverse>
       <Content>
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
-        <HouxBlondPhotos />
+        <Photos photos={photos} />
         <LogoImg fluid={logo} alt="Houx Blond" />
       </Content>
       <BgImg fluid={img} objectFit="contain" />
@@ -43,6 +45,14 @@ const query = graphql`
     }
     logo: file(relativePath: { eq: "images/nos-cabanes/logo-houx_blond.jpg" }) {
       ...CabinLogo
+    }
+    photos: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(jpeg)/" }
+        absolutePath: { regex: "/images/nos-cabanes/photos/houx-blond/" }
+      }
+    ) {
+      ...CabinPhotos
     }
   }
 `;

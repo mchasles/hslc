@@ -33,3 +33,23 @@ export const cabinLogoFragment = graphql`
     }
   }
 `;
+
+export const cabinPhotosFragment = graphql`
+  fragment CabinPhotos on FileConnection {
+    edges {
+      node {
+        name
+        photo: childImageSharp {
+          fluid(maxWidth: 1680, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+        thumb: childImageSharp {
+          fluid(maxWidth: 160, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  }
+`;
