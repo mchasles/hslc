@@ -65,6 +65,10 @@ const Photos = ({ photos: photosProp }) => {
     };
   }, [isModalOpen, keyPressListener, onArrowRight, onArrowLeft]);
 
+  const previousPhotoIndex =
+    currentPhoto - 1 < 0 ? photos.length - 1 : currentPhoto - 1;
+  const nextPhotoIndex =
+    currentPhoto - 1 < 0 ? photos.length - 1 : currentPhoto - 1;
   return (
     <Thumbnails>
       {photos.map(({ name, thumb }, index) => (
@@ -85,12 +89,23 @@ const Photos = ({ photos: photosProp }) => {
           <NavButtonLeft type="button" onClick={onArrowLeft}>
             &lsaquo;
           </NavButtonLeft>
-          <Img
-            fluid={photos[currentPhoto].photo}
-            fadeIn={false}
-            durationFadeIn={1000}
-            objectFit="contain"
-          />
+          <PhotoWrapper onClick={onArrowRight}>
+            <CloseButton onClick={() => setIsModalOpen(false)} />
+            <Img
+              fluid={photos[previousPhotoIndex].photo}
+              style={{ display: 'none' }}
+            />
+            <Img
+              fluid={photos[currentPhoto].photo}
+              fadeIn={false}
+              durationFadeIn={1000}
+              objectFit="contain"
+            />
+            <Img
+              fluid={photos[nextPhotoIndex].photo}
+              style={{ display: 'none' }}
+            />
+          </PhotoWrapper>
           <NavButtonRight type="button" onClick={onArrowRight}>
             &rsaquo;
           </NavButtonRight>
@@ -131,8 +146,46 @@ const NavButton = styled.button`
   font-size: calc(4vw + 4vh + 0.8vmin);
   height: 100vh;
   width: 10vw;
-  color: rgba(255, 255, 255, 0.6);
+  color: white;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: calc(1vw + 1vh + 0.8vmin);
+  height: 8vw;
+  width: 8vw;
+  border-radius: 8vw;
+  color: white;
+  transform: translate(50%, -50%);
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 2vw;
+    content: ' ';
+    height: 4vw;
+    width: 2px;
+    background-color: white;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
 
   &:active,
   &:focus {
@@ -163,6 +216,17 @@ const Thumbnail = styled(Img)`
     height: 8vw;
     border-radius: 8vw;
   }
+`;
+
+const PhotoWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  background-color: black;
 `;
 
 export default Photos;
