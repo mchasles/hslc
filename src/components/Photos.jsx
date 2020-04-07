@@ -138,17 +138,18 @@ const ThumnailButton = styled.button`
 const NavButton = styled.button`
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   border: none;
   padding: 0;
   background-color: transparent;
   font-family: 'Pintgram Regular';
   font-size: calc(4vw + 4vh + 0.8vmin);
-  height: 100vh;
-  width: 10vw;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 8vw;
+  line-height: 8vw;
   color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
 
   &:active,
   &:focus {
@@ -163,7 +164,7 @@ const CloseButton = styled.button`
   right: 0;
   border: none;
   padding: 0;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: calc(1vw + 1vh + 0.8vmin);
   height: 8vw;
   width: 8vw;
@@ -194,11 +195,13 @@ const CloseButton = styled.button`
 `;
 
 const NavButtonLeft = styled(NavButton)`
-  left: -10vw;
+  left: 0;
+  transform: translate(-50%, -50%);
 `;
 
 const NavButtonRight = styled(NavButton)`
-  right: -10vw;
+  right: 0;
+  transform: translate(50%, -50%);
 `;
 
 const Thumbnails = styled.div`
