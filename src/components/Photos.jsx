@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Modal } from './Modal';
 import Img from 'gatsby-image/withIEPolyfill';
@@ -86,9 +86,7 @@ const Photos = ({ photos: photosProp }) => {
       ))}
       {isModalOpen && (
         <Modal onOverlayClick={() => setIsModalOpen(false)}>
-          <NavButtonLeft type="button" onClick={onArrowLeft}>
-            &lsaquo;
-          </NavButtonLeft>
+          <NavButtonLeft type="button" onClick={onArrowLeft} />
           <PhotoWrapper onClick={onArrowRight}>
             <CloseButton onClick={() => setIsModalOpen(false)} />
             <Img
@@ -106,9 +104,7 @@ const Photos = ({ photos: photosProp }) => {
               style={{ display: 'none' }}
             />
           </PhotoWrapper>
-          <NavButtonRight type="button" onClick={onArrowRight}>
-            &rsaquo;
-          </NavButtonRight>
+          <NavButtonRight type="button" onClick={onArrowRight} />
         </Modal>
       )}
     </Thumbnails>
@@ -135,21 +131,46 @@ const ThumnailButton = styled.button`
   }
 `;
 
-const NavButton = styled.button`
-  position: absolute;
-  top: 50%;
+const NavButtonCommonStyles = css`
   border: none;
   padding: 0;
   background-color: transparent;
-  font-family: 'Pintgram Regular';
-  font-size: calc(4vw + 4vh + 0.8vmin);
   height: 8vw;
   width: 8vw;
   border-radius: 8vw;
-  line-height: 8vw;
-  color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  text-align: center;
+
+  &:before,
+  &:after {
+    opacity: 0.6;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+  }
+`;
+
+const NavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${NavButtonCommonStyles};
+
+  &:after {
+    display: block;
+    position: absolute;
+    content: ' ';
+    height: 2.4vw;
+    width: 2.4vw;
+    background-color: transparent;
+    border-color: white;
+    border-style: solid;
+  }
 
   &:active,
   &:focus {
@@ -162,14 +183,7 @@ const CloseButton = styled.button`
   z-index: 1;
   top: 0;
   right: 0;
-  border: none;
-  padding: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-size: calc(1vw + 1vh + 0.8vmin);
-  height: 8vw;
-  width: 8vw;
-  border-radius: 8vw;
-  color: white;
+  ${NavButtonCommonStyles};
   transform: translate(50%, -50%);
 
   &:before,
@@ -197,11 +211,21 @@ const CloseButton = styled.button`
 const NavButtonLeft = styled(NavButton)`
   left: 0;
   transform: translate(-50%, -50%);
+
+  &:after {
+    border-width: 0 0 2px 2px;
+    transform: translateX(25%) rotate(45deg);
+  }
 `;
 
 const NavButtonRight = styled(NavButton)`
   right: 0;
   transform: translate(50%, -50%);
+
+  &:after {
+    border-width: 2px 2px 0 0;
+    transform: translateX(-25%) rotate(45deg);
+  }
 `;
 
 const Thumbnails = styled.div`
