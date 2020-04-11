@@ -117,8 +117,8 @@ const ThumnailButton = styled.button`
   background-color: transparent;
   margin-right: 16px;
 
-  @media ${device.mobileL} {
-    margin-right: 32px;
+  @media ${device.tablet} {
+    margin-right: 24px;
   }
 
   &:active,
@@ -132,13 +132,22 @@ const ThumnailButton = styled.button`
 `;
 
 const NavButtonCommonStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   padding: 0;
   background-color: transparent;
-  height: 8vw;
-  width: 8vw;
-  border-radius: 8vw;
+  height: 14vw;
+  width: 14vw;
+  border-radius: 14vw;
   background-color: rgba(0, 0, 0, 0.5);
+
+  @media ${device.tablet}, (orientation: landscape) {
+    height: 8vw;
+    width: 8vw;
+    border-radius: 8vw;
+  }
 
   &:before,
   &:after {
@@ -156,9 +165,6 @@ const NavButtonCommonStyles = css`
 const NavButton = styled.button`
   position: absolute;
   top: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   ${NavButtonCommonStyles};
 
   &:after {
@@ -188,8 +194,6 @@ const CloseButton = styled.button`
 
   &:before,
   &:after {
-    position: absolute;
-    top: 2vw;
     content: ' ';
     height: 4vw;
     width: 2px;
@@ -197,9 +201,11 @@ const CloseButton = styled.button`
   }
   &:before {
     transform: rotate(45deg);
+    transform-origin: right;
   }
   &:after {
     transform: rotate(-45deg);
+    transform-origin: left;
   }
 
   &:active,
@@ -234,11 +240,11 @@ const Thumbnails = styled.div`
 `;
 
 const Thumbnail = styled(Img)`
-  width: 80px;
-  height: 80px;
-  border-radius: 80px;
+  width: 68px;
+  height: 68px;
+  border-radius: 68px;
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     width: 8vw;
     height: 8vw;
     border-radius: 8vw;

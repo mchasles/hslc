@@ -10,7 +10,7 @@ const Section = styled.div`
   font-size: 14px;
 
   @media ${device.tablet} {
-    max-width: 60%;
+    max-width: 50%;
   }
 
   table {

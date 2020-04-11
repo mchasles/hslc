@@ -57,8 +57,8 @@ const Dialog = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80vw;
-  height: 80vh;
+  width: 82vw;
+  height: 82vh;
   transform: translate(-50%, -50%);
   z-index: 1;
 

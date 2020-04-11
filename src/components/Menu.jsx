@@ -127,14 +127,15 @@ const menuAnimation = keyframes`
 const List = styled.ul`
   position: fixed;
   z-index: 20;
-  top: -100%;
+  top: -200%;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   width: 100%;
   height: 100%;
-  padding: 8%;
+  padding: 4% 0;
 
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -153,6 +154,7 @@ const List = styled.ul`
 
     overflow: hidden;
     margin: auto;
+    width: 100%;
     padding-bottom: 100%;
     border-radius: 100%;
 
@@ -238,15 +240,18 @@ const ListHomeLink = styled(Link)`
   }
 `;
 
-const ListItemSocial = styled(ListItem)`
+const ListSocial = styled.ul`
+  display: flex;
+  margin: 0 auto;
   @media ${device.tablet} {
-    margin-right: 16px;
+    margin: 0 0 0 auto;
   }
 `;
 
-const ListItemFb = styled(ListItemSocial)`
-  @media ${device.tablet} {
-    margin-left: auto;
+const ListItemSocial = styled(ListItem)`
+  margin: 0;
+  &:first-child {
+    margin-right: 16px;
   }
 `;
 
@@ -265,7 +270,7 @@ const ListLink = styled(Link)`
   display: block;
   width: 100%;
 
-  line-height: 48px;
+  line-height: 42px;
 
   color: white;
   text-align: center;
@@ -398,24 +403,27 @@ const Menu = () => {
             </ListItem>
           );
         })}
-        <ListItemFb>
-          <ListSocialLink
-            href="https://www.facebook.com/HetresousleCharme/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={fbLogo} alt="Facebook" />
-          </ListSocialLink>
-        </ListItemFb>
-        <ListItemSocial>
-          <ListSocialLink
-            href="https://www.instagram.com/hetre.sous.le.charme/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={instaLogo} alt="Instagram" />
-          </ListSocialLink>
-        </ListItemSocial>
+
+        <ListSocial>
+          <ListItemSocial>
+            <ListSocialLink
+              href="https://www.facebook.com/HetresousleCharme/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={fbLogo} alt="Facebook" />
+            </ListSocialLink>
+          </ListItemSocial>
+          <ListItemSocial>
+            <ListSocialLink
+              href="https://www.instagram.com/hetre.sous.le.charme/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={instaLogo} alt="Instagram" />
+            </ListSocialLink>
+          </ListItemSocial>
+        </ListSocial>
       </List>
     </nav>
   );
