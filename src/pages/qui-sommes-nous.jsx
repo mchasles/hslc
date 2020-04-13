@@ -12,7 +12,7 @@ const Text = styled.span`
   margin-bottom: -4%;
 `;
 
-const Infos = () => {
+export default () => {
   return (
     <Page bgImgs={false}>
       <PageHeader>
@@ -24,5 +24,3 @@ const Infos = () => {
     </Page>
   );
 };
-
-export default Infos;

@@ -7,7 +7,7 @@ date: '2020-01-20'
 
 Véritable nid d’amour forestier, Pin en vert est une cabane cocooning et douillette dans laquelle aiment se retrouver les couples en recherche d’un moment privilégié.
 
-Sa somptueuse terrasse offre un espace parfais de détente, en surplomb de la Dordogne et des magnifiques paysages qui l’entourent.
+Sa somptueuse terrasse offre un espace parfait de détente, en surplomb de la Dordogne et des magnifiques paysages qui l’entourent.
 
 ## Les +
 

@@ -1,14 +1,29 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import Page from '../components/Page';
-import Gift from '../components/Gift';
+import Section from '../components/Section';
 
-const PageGift = () => {
+export default ({ data }) => {
+  const html = data.allMarkdownRemark.edges[0]?.node.html;
+
   return (
     <Page>
-      <Gift />
+      <Section id="contact" dangerouslySetInnerHTML={{ __html: html }} />
     </Page>
   );
 };
 
-export default PageGift;
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { fields: { slug: { eq: "/data/cheques-cadeaux/" } } }
+    ) {
+      edges {
+        node {
+          html
+        }
+      }
+    }
+  }
+`;
