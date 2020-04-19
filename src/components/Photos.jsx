@@ -7,7 +7,7 @@ import Img from 'gatsby-image/withIEPolyfill';
 import { device } from '../utils/media';
 
 const Photos = ({ photos: photosProp }) => {
-  const [currentPhoto, setCurrentPhoto] = useState(0);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const photos = photosProp.map(
@@ -23,21 +23,21 @@ const Photos = ({ photos: photosProp }) => {
   const onArrowLeft = useCallback(
     e => {
       e.stopPropagation();
-      setCurrentPhoto(
-        currentPhoto - 1 < 0 ? photos.length - 1 : currentPhoto - 1
+      setCurrentPhotoIndex(
+        currentPhotoIndex - 1 < 0 ? photos.length - 1 : currentPhotoIndex - 1
       );
     },
-    [currentPhoto, photos.length]
+    [currentPhotoIndex, photos.length]
   );
 
   const onArrowRight = useCallback(
     e => {
       e.stopPropagation();
-      setCurrentPhoto(
-        currentPhoto - 1 < 0 ? photos.length - 1 : currentPhoto - 1
+      setCurrentPhotoIndex(
+        currentPhotoIndex - 1 < 0 ? photos.length - 1 : currentPhotoIndex - 1
       );
     },
-    [currentPhoto, photos.length]
+    [currentPhotoIndex, photos.length]
   );
 
   const keyPressListener = useCallback(
@@ -65,10 +65,15 @@ const Photos = ({ photos: photosProp }) => {
     };
   }, [isModalOpen, keyPressListener, onArrowRight, onArrowLeft]);
 
+  const currentPhoto = photos[currentPhotoIndex].photo;
+  const { aspectRatio } = currentPhoto;
+
   const previousPhotoIndex =
-    currentPhoto - 1 < 0 ? photos.length - 1 : currentPhoto - 1;
+    currentPhotoIndex - 1 < 0 ? photos.length - 1 : currentPhotoIndex - 1;
   const nextPhotoIndex =
-    currentPhoto - 1 < 0 ? photos.length - 1 : currentPhoto - 1;
+    currentPhotoIndex - 1 < 0 ? photos.length - 1 : currentPhotoIndex - 1;
+  const previousPhoto = photos[previousPhotoIndex].photo;
+  const nextPhoto = photos[nextPhotoIndex].photo;
 
   return (
     <Thumbnails>
@@ -78,7 +83,7 @@ const Photos = ({ photos: photosProp }) => {
           type="button"
           onClick={e => {
             e.preventDefault();
-            setCurrentPhoto(index);
+            setCurrentPhotoIndex(index);
             setIsModalOpen(true);
           }}
         >
@@ -89,24 +94,19 @@ const Photos = ({ photos: photosProp }) => {
         <Modal onOverlayClick={() => setIsModalOpen(false)}>
           <NavButtonLeft type="button" onClick={onArrowLeft} />
           <PhotoWrapper
-            ratio={photos[currentPhoto].photo.aspectRatio}
+            width={aspectRatio > 1 ? '82vw' : `calc(82vh * ${aspectRatio})`}
+            height={aspectRatio > 1 ? `calc(82vw / ${aspectRatio})` : '82vh'}
             onClick={onArrowRight}
           >
             <CloseButton onClick={() => setIsModalOpen(false)} />
+            <Img fluid={previousPhoto} style={{ display: 'none' }} />
             <Img
-              fluid={photos[previousPhotoIndex].photo}
-              style={{ display: 'none' }}
-            />
-            <Img
-              fluid={photos[currentPhoto].photo}
+              fluid={currentPhoto}
               fadeIn={false}
               durationFadeIn={1000}
               objectFit="contain"
             />
-            <Img
-              fluid={photos[nextPhotoIndex].photo}
-              style={{ display: 'none' }}
-            />
+            <Img fluid={nextPhoto} style={{ display: 'none' }} />
           </PhotoWrapper>
           <NavButtonRight type="button" onClick={onArrowRight} />
         </Modal>
@@ -261,20 +261,13 @@ const PhotoWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: ${({ ratio }) => (ratio > 1 ? `100%` : '40%')};
-  height: 0;
-  padding-top: ${({ ratio }) =>
-    ratio > 1 ? `${100 / ratio}%` : `${40 / ratio}%`};
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   margin: 0 auto;
   background-color: black;
   transform: scale(0.75);
 
   .gatsby-image-wrapper {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     width: 100%;
     height: 100%;
   }

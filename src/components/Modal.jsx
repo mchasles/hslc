@@ -22,13 +22,22 @@ export const ModalProvider = ({ children }) => {
   );
 };
 
-export const Modal = ({ onClose, onOverlayClick, children, ...props }) => {
+export const Modal = ({
+  onClose,
+  onOverlayClick,
+  children,
+  width,
+  height,
+  ...props
+}) => {
   const { modalNode } = useContext(Context);
 
   return modalNode
     ? ReactDOM.createPortal(
         <Overlay onClick={onOverlayClick}>
-          <Dialog {...props}>{children}</Dialog>
+          <Dialog width={width} height={height}>
+            {children}
+          </Dialog>
         </Overlay>,
         modalNode
       )
@@ -59,8 +68,8 @@ const Dialog = styled.div`
   left: 50%;
   display: flex;
   align-items: center;
-  width: 82vw;
-  height: 82vh;
+  width: ${({ width }) => (width ? width : '82vw')};
+  height: ${({ height }) => (height ? height : '82vh')};
   transform: translate(-50%, -50%);
   z-index: 1;
 `;
