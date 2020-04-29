@@ -10,21 +10,23 @@ const Photos = ({ photos: photosProp }) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const photos = photosProp.map(
-    ({
-      node: {
-        name,
-        photo: { fluid: photo },
-        thumb: { fluid: thumb },
-      },
-    }) => ({ name, photo, thumb })
-  );
+  const photos = photosProp
+    .map(
+      ({
+        node: {
+          name,
+          photo: { fluid: photo },
+          thumb: { fluid: thumb },
+        },
+      }) => ({ name, photo, thumb })
+    )
+    .sort((a, b) => a.name - b.name);
 
   const onArrowLeft = useCallback(
     e => {
       e.stopPropagation();
       setCurrentPhotoIndex(
-        currentPhotoIndex - 1 < 0 ? photos.length - 1 : currentPhotoIndex - 1
+        currentPhotoIndex - 1 <= 0 ? photos.length - 1 : currentPhotoIndex - 1
       );
     },
     [currentPhotoIndex, photos.length]
@@ -34,7 +36,7 @@ const Photos = ({ photos: photosProp }) => {
     e => {
       e.stopPropagation();
       setCurrentPhotoIndex(
-        currentPhotoIndex - 1 < 0 ? photos.length - 1 : currentPhotoIndex - 1
+        currentPhotoIndex + 1 < photos.length ? currentPhotoIndex + 1 : 0
       );
     },
     [currentPhotoIndex, photos.length]
@@ -71,13 +73,18 @@ const Photos = ({ photos: photosProp }) => {
   const previousPhotoIndex =
     currentPhotoIndex - 1 < 0 ? photos.length - 1 : currentPhotoIndex - 1;
   const nextPhotoIndex =
-    currentPhotoIndex - 1 < 0 ? photos.length - 1 : currentPhotoIndex - 1;
+    currentPhotoIndex + 1 < photos.length ? currentPhotoIndex + 1 : 0;
   const previousPhoto = photos[previousPhotoIndex].photo;
   const nextPhoto = photos[nextPhotoIndex].photo;
-
+  console.log(
+    currentPhotoIndex,
+    photos.length,
+    nextPhotoIndex,
+    photos[nextPhotoIndex]
+  );
   return (
     <Thumbnails>
-      {photos.map(({ name, thumb }, index) => (
+      {photos.slice(0, 3).map(({ name, thumb }, index) => (
         <ThumnailButton
           key={name}
           type="button"
