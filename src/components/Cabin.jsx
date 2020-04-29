@@ -31,9 +31,9 @@ const Section = styled.section`
   position: relative;
   display: flex;
   flex-direction: column-reverse;
-
   align-items: top;
-  margin-bottom: 32px;
+  padding-top: 68px;
+  margin-bottom: 48px;
 
   @media ${device.mobileL} {
     flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
@@ -55,41 +55,53 @@ const BgImg = styled(Img)`
 const LogoImg = styled(Img)`
   position: absolute !important;
   z-index: 1;
-  width: 24vw;
-  left: 26%;
+  width: 22vw;
+  left: 36%;
   top: 0;
 
   @media ${device.mobileL} {
     width: 14vw;
-    left: 38%;
+    left: 32%;
     top: -4%;
   }
 `;
 
 const Content = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
 
   padding: 0 6vw;
 
-  h1 {
+  @media ${device.mobileL} {
     position: relative;
+  }
+
+  h1 {
+    position: absolute;
+    top: 0;
     color: rgb(60, 50, 40);
     font-family: 'Pintgram Regular';
     font-size: 2em;
     font-weight: 100;
+    padding: 0;
+
+    @media ${device.mobileL} {
+      position: relative;
+    }
 
     &::before {
       position: absolute;
       top: -30%;
-      left: 8%;
+      left: 16%;
       opacity: 0.6;
       content: 'CABANE';
       color: white;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 0.4em;
       font-weight: 600;
+      @media ${device.mobileL} {
+        left: 8%;
+      }
     }
 
     @media ${device.mobileL} {

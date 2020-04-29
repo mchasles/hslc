@@ -42,6 +42,7 @@ const BookButtonStyled = styled(BookButton)`
 const SectionPanoramic = styled.section`
   display: flex;
   flex-direction: column;
+  margin-bottom: 48px;
 
   ${BookButtonStyled} {
     margin: 0 auto 32px;
