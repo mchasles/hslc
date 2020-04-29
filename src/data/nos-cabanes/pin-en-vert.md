@@ -13,7 +13,10 @@ Sa somptueuse terrasse offre un espace parfait de détente, en surplomb de la Do
 
 - Terrasse panoramique
 - Idéale pour les couples
-- Superficie : 16m²
+
+## Superficie
+
+16m²
 
 ## Capacité
 

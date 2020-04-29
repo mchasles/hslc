@@ -15,7 +15,10 @@ Sa douche en bois massif parachève la cabane dans un esprit boisé de détente 
 
 - Sa superbe douche en bois
 - Sa position vertigineuse
-- Superficie : 20m²
+
+## Superficie
+
+20m²
 
 ## Capacité
 
