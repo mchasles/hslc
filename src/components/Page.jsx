@@ -88,24 +88,8 @@ const Footer = styled.div`
     margin: 0.2em 0;
   }
 
-  .address {
-    font-size: 0.8em;
-    margin: 1em 0;
-  }
-
-  .phone {
-    font-size: 0.8em;
-    margin: 1em 0;
-  }
-
-  .copyright {
-    font-size: 0.8em;
-    margin-bottom: 0;
-  }
-
   .small {
-    margin: 0;
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
 `;
 

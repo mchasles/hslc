@@ -10,6 +10,7 @@ import fbLogo from '../images/menu/facebook.png';
 import instaLogo from '../images/menu/instagram.png';
 import { device } from '../utils/media';
 import dataMenu from '../data/menu.yaml';
+import BookButton from './BookButton';
 
 export const getLink = str => /^(.*)\((.*)\)$/.exec(str)[2];
 export const getLabel = str => /^(.*)\((.*)\)$/.exec(str)[1];
@@ -248,6 +249,12 @@ const ListSocial = styled.ul`
   }
 `;
 
+const ListItemBookButton = styled(ListItem)`
+  @media ${device.tablet} {
+    margin-left: 32px;
+  }
+`;
+
 const ListItemSocial = styled(ListItem)`
   margin: 0;
   &:first-child {
@@ -403,7 +410,9 @@ const Menu = () => {
             </ListItem>
           );
         })}
-
+        <ListItemBookButton>
+          <BookButton />
+        </ListItemBookButton>
         <ListSocial>
           <ListItemSocial>
             <ListSocialLink
