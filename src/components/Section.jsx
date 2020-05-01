@@ -29,7 +29,7 @@ const Section = styled.div`
   }
 
   td {
-    color: rgb(117, 117, 117);
+    color: rgb(60, 50, 40);
     background-color: rgba(255, 255, 255, 0.4);
   }
 
@@ -37,7 +37,7 @@ const Section = styled.div`
     margin: 16px 0;
     li {
       margin-bottom: 8px;
-      color: rgb(97, 97, 97);
+      color: rgb(60, 50, 40);
     }
   }
 
@@ -71,7 +71,7 @@ const Section = styled.div`
 
   p {
     margin: 16px 0;
-    color: rgb(97, 97, 97);
+    color: rgb(60, 50, 40);
   }
 `;
 

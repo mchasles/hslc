@@ -110,7 +110,7 @@ const Content = styled.div`
   }
 
   h2 {
-    color: rgb(100, 90, 80);
+    color: rgb(60, 50, 40);
     font-family: 'Pintgram Regular';
     font-size: 1.4em;
     font-weight: 100;
@@ -124,7 +124,7 @@ const Content = styled.div`
 
   p,
   li {
-    color: rgb(80, 80, 75);
+    color: rgb(60, 50, 40);
     font-size: 0.8em;
     margin-top: 0;
     @media ${device.mobileL} {

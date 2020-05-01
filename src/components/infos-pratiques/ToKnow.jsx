@@ -33,7 +33,7 @@ const Wrapper = styled(Section)`
     margin: 0;
     line-height: 18px;
     text-align: center;
-    color: rgb(117, 117, 117);
+    color: rgb(60, 50, 40);
     font-style: italic;
   }
 `;
