@@ -30,9 +30,11 @@ const Title = styled.div`
   }
 `;
 
-const PageHeader = ({ children }) => {
+const PageHeader = ({ children, page }) => {
   const data = useStaticQuery(query);
-  const panoramicImg = data.panoramicImg.childImageSharp.fluid;
+  const panoramicImg =
+    data[page === 'infos' ? 'panoramicImgInfos' : 'panoramicImgIntro']
+      .childImageSharp.fluid;
 
   return (
     <Wrapper>
@@ -44,7 +46,18 @@ const PageHeader = ({ children }) => {
 
 export const query = graphql`
   query {
-    panoramicImg: file(relativePath: { eq: "images/panoramic.jpg" }) {
+    panoramicImgInfos: file(
+      relativePath: { eq: "images/panoramic-infos.jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 2880) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    panoramicImgIntro: file(
+      relativePath: { eq: "images/panoramic-intro.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid

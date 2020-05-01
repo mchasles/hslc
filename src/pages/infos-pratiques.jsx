@@ -17,7 +17,7 @@ const Text = styled.span`
 export default () => {
   return (
     <Page bgImgs={false}>
-      <PageHeader>
+      <PageHeader page="infos">
         <Text>Infos</Text> Pratiques
       </PageHeader>
       <ToKnow />

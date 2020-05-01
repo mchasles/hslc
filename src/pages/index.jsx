@@ -13,7 +13,7 @@ import { ModalProvider } from '../components/Modal';
 
 const Section = styled.section`
   position: relative;
-  height: 110vh;
+  height: 100vh;
 `;
 
 const BgImg = styled(Img)`
@@ -136,7 +136,7 @@ export const query = graphql`
         }
       }
     }
-    bgImg: file(relativePath: { eq: "images/accueil.jpg" }) {
+    bgImg: file(relativePath: { eq: "images/home.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2880) {
           ...GatsbyImageSharpFluid
