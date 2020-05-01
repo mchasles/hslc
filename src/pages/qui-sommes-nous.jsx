@@ -16,7 +16,7 @@ export default () => {
   return (
     <Page bgImgs={false}>
       <PageHeader page="intro">
-        <Text>Qui</Text> Somme Nous ?
+        <Text>Qui</Text> Sommes Nous ?
       </PageHeader>
       <Introducing />
       <Philosophy />
