@@ -14,7 +14,7 @@ const Title = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255);
-  font-family: 'Pintgram Regular';
+  font-family: 'Shopie';
   font-size: calc(3vw + 3vh + 0.8vmin);
   font-weight: 100;
   white-space: nowrap;

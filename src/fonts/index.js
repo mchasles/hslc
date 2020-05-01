@@ -1,3 +1,4 @@
-import PintgramRegular from './pintgramregular4bc3.woff';
+import Shopie from './Shopie.woff';
+import Shopie2 from './Shopie.woff2';
 
-export default { PintgramRegular };
+export default { Shopie, Shopie2 };

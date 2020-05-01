@@ -47,18 +47,19 @@ const Section = styled.div`
 
     text-align: center;
     color: rgb(60, 50, 40);
-    font-family: 'Pintgram Regular';
-    font-size: 38px;
+    font-family: 'Shopie';
+    font-size: 10vw;
     font-weight: 100;
 
-    @media ${device.tablet} {
+    @media ${device.mobileL} {
+      font-size: 3.8vw;
       padding-top: 80px;
     }
   }
 
   h2 {
     color: rgb(60, 50, 40);
-    font-family: 'Pintgram Regular';
+    font-family: 'Shopie';
     font-size: 28px;
     font-weight: 100;
     margin-bottom: 0;

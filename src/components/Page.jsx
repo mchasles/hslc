@@ -13,10 +13,10 @@ import pinEnvert from '../images/nos-cabanes/logo-pin_en_vert.jpg';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'Pintgram Regular';
+    font-family: 'Shopie';
     font-style: normal;
     font-weight: normal;
-    src: local('Pintgram Regular'), url(${fontFiles.PintgramRegular}) format('woff');
+    src: local('Shopie'), url(${fontFiles.Shopie}) format('woff'), url(${fontFiles.Shopie2}) format('woff2');
   }
 
   html {

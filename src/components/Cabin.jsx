@@ -80,38 +80,36 @@ const Content = styled.div`
     position: absolute;
     top: 0;
     color: rgb(60, 50, 40);
-    font-family: 'Pintgram Regular';
-    font-size: 2em;
+    font-family: 'Shopie';
+    font-size: 12vw;
     font-weight: 100;
     padding: 0;
 
     @media ${device.mobileL} {
       position: relative;
+      font-size: 4vw;
     }
 
     &::before {
       position: absolute;
-      top: -30%;
+      top: -12%;
       left: 16%;
       opacity: 0.6;
       content: 'CABANE';
       color: white;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.4em;
+      font-size: 4vw;
       font-weight: 600;
       @media ${device.mobileL} {
         left: 8%;
+        font-size: 1.2vw;
       }
-    }
-
-    @media ${device.mobileL} {
-      font-size: 3em;
     }
   }
 
   h2 {
     color: rgb(60, 50, 40);
-    font-family: 'Pintgram Regular';
+    font-family: 'Shopie';
     font-size: 1.4em;
     font-weight: 100;
     margin-bottom: 0;
