@@ -245,13 +245,14 @@ const ListSocial = styled.ul`
   display: flex;
   margin: 0 auto;
   @media ${device.tablet} {
-    margin: 0 0 0 auto;
+    margin: 0;
   }
 `;
 
 const ListItemBookButton = styled(ListItem)`
+  margin: 0 auto;
   @media ${device.tablet} {
-    margin-left: 32px;
+    margin: 0 32px 0 auto;
   }
 `;
 
