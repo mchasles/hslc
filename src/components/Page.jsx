@@ -48,7 +48,6 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  padding-bottom: ${({ marginBottom }) => (marginBottom ? '128px' : '0')};
 `;
 
 const BgImg = styled.img`
@@ -77,6 +76,39 @@ const DesChesnaies = styled(BgImg)`
   top: 66vh;
 `;
 
+const Footer = styled.div`
+  margin-top: 128px;
+  margin-bottom: 64px;
+  text-align: center;
+  color: rgb(60, 50, 40, 0.4);
+  font-size: 1em;
+  font-style: italic;
+
+  p {
+    margin: 0.2em 0;
+  }
+
+  .address {
+    font-size: 0.8em;
+    margin: 1em 0;
+  }
+
+  .phone {
+    font-size: 0.8em;
+    margin: 1em 0;
+  }
+
+  .copyright {
+    font-size: 0.8em;
+    margin-bottom: 0;
+  }
+
+  .small {
+    margin: 0;
+    font-size: 0.6em;
+  }
+`;
+
 const query = graphql`
   query {
     site {
@@ -84,10 +116,17 @@ const query = graphql`
         title
       }
     }
+    allMarkdownRemark(filter: { fields: { slug: { eq: "/data/footer/" } } }) {
+      edges {
+        node {
+          html
+        }
+      }
+    }
   }
 `;
 
-const Page = ({ children, bgImgs = true, marginBottom = false }) => (
+const Page = ({ children, bgImgs = true }) => (
   <StaticQuery
     query={query}
     render={data => {
@@ -103,7 +142,7 @@ const Page = ({ children, bgImgs = true, marginBottom = false }) => (
             <meta name="robots" content="noindex" />
             <meta name="googlebot" content="noindex" />
           </Helmet>
-          <Wrapper id="main" marginBottom={marginBottom}>
+          <Wrapper id="main">
             <GlobalStyle />
             <Menu />
             {children}
@@ -115,6 +154,11 @@ const Page = ({ children, bgImgs = true, marginBottom = false }) => (
                 <PinEnvert src={pinEnvert} alt="Pin en vert" />
               </>
             )}
+            <Footer
+              dangerouslySetInnerHTML={{
+                __html: data.allMarkdownRemark.edges[0]?.node.html,
+              }}
+            />
           </Wrapper>
         </>
       );
