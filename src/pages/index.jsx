@@ -45,7 +45,7 @@ const SectionPanoramic = styled.section`
   margin-bottom: 48px;
 
   ${BookButtonStyled} {
-    margin: 0 auto 32px;
+    margin: 32px auto 32px;
   }
 `;
 

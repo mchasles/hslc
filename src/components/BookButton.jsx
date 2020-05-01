@@ -11,6 +11,7 @@ const Button = styled.a`
   text-align: center;
   line-height: 2.8em;
   background-color: rgb(165, 188, 84);
+  box-shadow: 0 0 4px 2px rgb(0, 0, 0, 0.4);
   color: white;
 
   text-transform: uppercase;
