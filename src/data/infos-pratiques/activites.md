@@ -1,14 +1,14 @@
 # Activités
 
-## Activités à faire sur place
+### Activités à faire sur place
 
 De nombreuses randonnées avec cartes fournies testées régulièrement par nos soins à vous recommander.
 
-## Nouveau !
+### Nouveau !
 
 Via Ferrata : parcours d'escalade et de randonnée suspendue au-dessus de la Dordogne avec pont tibétain, pont de singe - 4 ateliers avec différents niveaux de difficulté.
 
-## Marre du sport ?! Envie de culture ?
+### Marre du sport ?! Envie de culture ?
 
 De nombreuses visites près de nos cabanes :
 
@@ -23,7 +23,7 @@ De nombreuses visites près de nos cabanes :
 - Les pans de Travassac : [www.lespansdetravassac.com](www.lespansdetravassac.com)
 - L'abbaye cistercienne d'Aubazine
 
-## Mais aussi de nombreuses activités pour les enfants :
+### Mais aussi de nombreuses activités pour les enfants :
 
 - Différents sites d'accrobranches pour petits et grands !
 - Jambes trop petites pour la randonnée ? Choisissez les ballades à dos d'âne ou de poney !
