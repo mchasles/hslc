@@ -37,6 +37,16 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-custom-blocks',
+            options: {
+              blocks: {
+                logos: {
+                  classes: 'logos',
+                },
+              },
+            },
+          },
+          {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 800,

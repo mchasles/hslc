@@ -1,12 +1,32 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
-
+import { device } from '../../utils/media';
 import Section from '../Section';
 
 const Wrapper = styled(Section)`
+  display: flex;
+  flex-wrap: wrap;
+
+  .logos {
+    flex-basis: 100%;
+    @media ${device.mobileL} {
+      flex-basis: 40%;
+    }
+  }
+
+  h1,
+  p {
+    flex-basis: 100%;
+  }
   ul {
+    flex-basis: 100%;
+    box-sizing: border-box;
     padding-left: 16px;
+    @media ${device.mobileL} {
+      flex-basis: 56%;
+      margin-right: 4%;
+    }
   }
 
   li {

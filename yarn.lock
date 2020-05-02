@@ -786,6 +786,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.9.2":
+  version "7.9.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
+  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.8.3.tgz#e02ad04fe262a657809327f578056ca15fd4d1b8"
@@ -5409,6 +5416,14 @@ gatsby-react-router-scroll@^2.1.20:
     "@babel/runtime" "^7.7.6"
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
+
+gatsby-remark-custom-blocks@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-custom-blocks/-/gatsby-remark-custom-blocks-2.3.0.tgz#6b385720f186e8cb12f8ec57add42e0b0c7d3cfb"
+  integrity sha512-/wULQ2Hr2BEPV3UQTG6xL/6++W66Ah1gDvTNphAQPhSjrA/dd7TsXxGwez/ENK9a7zkYgLigyycHd5XLhbm9LA==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    remark-custom-blocks "^2.5.0"
 
 gatsby-remark-images@^3.1.44:
   version "3.1.44"
@@ -10224,6 +10239,11 @@ regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.3:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
   integrity sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
 
+regenerator-runtime@^0.13.4:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
+  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
+
 regenerator-transform@^0.14.0:
   version "0.14.1"
   resolved "https://registry.yarnpkg.com/regenerator-transform/-/regenerator-transform-0.14.1.tgz#3b2fce4e1ab7732c08f665dfdb314749c7ddd2fb"
@@ -10316,6 +10336,13 @@ regjsparser@^0.6.0:
   integrity sha512-E9ghzUtoLwDekPT0DYCp+c4h+bvuUpe6rRHCTYn6eGoqj1LgKXxT6I0Il4WbjhQkOghzi/V+y03bPKvbllL93Q==
   dependencies:
     jsesc "~0.5.0"
+
+remark-custom-blocks@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/remark-custom-blocks/-/remark-custom-blocks-2.5.0.tgz#57cfb814b2c867fbd45a2e331582a1e402e0c4e5"
+  integrity sha512-FcCd5Boqn4XBXnlIvpy/9jyVTOZRg7unXv8m14FM4EM0qXLeSvxSReRfuoWmFWZwi0+MOf8bqEwJIBut0NYdJw==
+  dependencies:
+    space-separated-tokens "^1.1.5"
 
 remark-parse@^6.0.0, remark-parse@^6.0.3:
   version "6.0.3"
@@ -11154,6 +11181,11 @@ space-separated-tokens@^1.0.0:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/space-separated-tokens/-/space-separated-tokens-1.1.4.tgz#27910835ae00d0adfcdbd0ad7e611fb9544351fa"
   integrity sha512-UyhMSmeIqZrQn2UdjYpxEkwY9JUrn8pP+7L4f91zRzOQuI8MF1FGLfYU9DKCYeLdo7LXMxwrX5zKFy7eeeVHuA==
+
+space-separated-tokens@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/space-separated-tokens/-/space-separated-tokens-1.1.5.tgz#85f32c3d10d9682007e917414ddc5c26d1aa6899"
+  integrity sha512-q/JSVd1Lptzhf5bkYm4ob4iWPjx0KiRe3sRFBNrVqbJkFaBm5vbbowy1mymoPNLRa52+oadOhJ+K49wsSeSjTA==
 
 spdx-correct@^3.0.0:
   version "3.1.0"
