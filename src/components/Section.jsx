@@ -9,7 +9,7 @@ const Section = styled.div`
   margin: 0 auto;
   font-size: 14px;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     max-width: 50%;
   }
 

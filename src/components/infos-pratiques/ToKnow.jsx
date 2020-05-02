@@ -4,11 +4,37 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import { device } from '../../utils/media';
 import Section from '../Section';
+import pinecone from '../../images/nos-cabanes/logo-pin_en_vert.jpg';
 
 const Wrapper = styled(Section)`
+  position: relative;
+`;
+
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  li {
+    padding-bottom: 24px;
+
+    text-align: center;
+  }
+
+  @media ${device.tablet} {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: start;
+    }
+    li {
+      flex-basis: 33.333%;
+      padding: 0 24px 24px 24px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
 
   .gatsby-resp-image-wrapper {
     width: 60px;
@@ -16,7 +42,6 @@ const Wrapper = styled(Section)`
 
     @media ${device.tablet} {
       width: 80px;
-      margin-bottom: 16px;
     }
   }
 
@@ -29,6 +54,15 @@ const Wrapper = styled(Section)`
     }
   }
 
+  em {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(165, 188, 84);
+    margin-bottom: 0.8em;
+  }
+
   p {
     margin: 0;
     line-height: 18px;
@@ -38,15 +72,29 @@ const Wrapper = styled(Section)`
   }
 `;
 
+const Pinecone = styled.img`
+  display: none;
+  @media ${device.tablet} {
+    display: block;
+    position: absolute;
+    right: 4%;
+    top: 60%;
+    width: 24%;
+  }
+`;
+
 const ToKnow = () => {
   const data = useStaticQuery(query);
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
   return (
-    <Wrapper
-      id="a-savoir-avant-votre-sejour"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <Wrapper>
+      <Content
+        id="a-savoir-avant-votre-sejour"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+      <Pinecone src={pinecone} alt="Pomme de pain" />
+    </Wrapper>
   );
 };
 
