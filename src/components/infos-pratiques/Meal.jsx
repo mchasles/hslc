@@ -25,7 +25,7 @@ const Wrapper = styled(Section)`
 
       & + table {
         margin: 0 auto 24px 6%;
-        & + h3 + table {
+        & + p + h3 + table {
           width: 56%;
           & + table {
             width: 38%;

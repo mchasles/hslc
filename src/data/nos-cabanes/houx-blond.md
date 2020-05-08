@@ -5,7 +5,7 @@ date: '2020-01-20'
 
 # Houx Blond ![Logo](../../images/nos-cabanes/logo-houx_blond.jpg)
 
-Initialement conçue comme un lieu d’habitation à long terme, Houx Blond est une cabane spacieuse dans laquelle l’accent est mis sur le confort : toilettes séparés, salle de bains séparés, lit de 180cm…
+Initialement conçue comme un lieu d’habitation à long terme, Houx Blond est une cabane spacieuse dans laquelle l’accent est mis sur le confort : toilettes séparés, salle de bain séparée, lit de 180cm…
 
 Située face à la Dordogne, seule au bout de son chemin d’accès, elle est idéale pour qui recherche l’isolement et le calme bienveillant de la forêt.
 

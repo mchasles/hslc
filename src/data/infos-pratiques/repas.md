@@ -10,6 +10,8 @@
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Dip + crackers <br> <br>Quiche et salade maison du jour <br><br> Fromage <br><br> Possibilité de dessert en supplément – 5€ par personne<br><br> (Boissons non incluses) |
 
+Le menu «Plaisirs de cabane» est également disponible le soir, de Mai à Septembre.
+
 ### Soir
 
 | Panier repas gourmet terroir pour 2 personnes : 74€<br>(inclus vin et apéritif)                                                                                                                                                                                                                                                                                           |
@@ -26,5 +28,5 @@ sûrs de pouvoir l’accepter.
 
 Il est possible de demander un menu différent si vous souhaitez commander un panier repas plusieurs soirs d’affilée.
 
-Nous pouvons adapter le menu pour les personnes végétariennes / végétariennes et, ou, allergiques/intolérantes.
+Nous pouvons adapter le menu pour les personnes végétariennes/végétaliennes et, ou, allergiques/intolérantes.
 Veuillez nous contacter directement pour ces demandes spécifiques.

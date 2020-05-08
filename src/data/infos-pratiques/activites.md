@@ -2,9 +2,7 @@
 
 ### Activités à faire sur place
 
-De nombreuses randonnées avec cartes fournies testées régulièrement par nos soins à vous recommander.
-
-### Nouveau !
+A proximité des cabanes, de nombreuses randonnées avec cartes fournies testées régulièrement par nos soins à vous recommander.
 
 Via Ferrata : parcours d'escalade et de randonnée suspendue au-dessus de la Dordogne avec pont tibétain, pont de singe - 4 ateliers avec différents niveaux de difficulté.
 
