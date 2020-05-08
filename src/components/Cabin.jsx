@@ -14,7 +14,6 @@ const Cabin = ({ id, title, reverse = false, html, img, logo, photos }) => {
         <Description dangerouslySetInnerHTML={{ __html: html }} />
         <BookCabinButton />
         <Photos photos={photos} />
-        <LogoImg fluid={logo} alt={title} />
       </Content>
       <BgImg fluid={img} objectFit="contain" />
     </Section>
@@ -32,7 +31,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column-reverse;
   align-items: top;
-  padding-top: 68px;
+  padding-top: 128px;
   margin-bottom: 48px;
 
   @media ${device.mobileL} {
@@ -43,26 +42,14 @@ const Section = styled.section`
 `;
 
 const BgImg = styled(Img)`
+  z-index: 2;
+
   @media ${device.mobileL} {
     width: 42%;
     flex-grow: 1;
     img {
       height: inherit !important;
     }
-  }
-`;
-
-const LogoImg = styled(Img)`
-  position: absolute !important;
-  z-index: 1;
-  width: 22vw;
-  left: 36%;
-  top: 0;
-
-  @media ${device.mobileL} {
-    width: 14vw;
-    left: 32%;
-    top: -4%;
   }
 `;
 
@@ -78,16 +65,35 @@ const Content = styled.div`
 
   h1 {
     position: absolute;
-    top: 0;
+    top: 64px;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
     color: rgb(60, 50, 40);
     font-family: 'Shopie';
-    font-size: 12vw;
+    font-size: 42px;
     font-weight: 100;
-    padding: 0;
 
     @media ${device.mobileL} {
       position: relative;
-      font-size: 4vw;
+      top: 0;
+      font-size: 52px;
+      margin-bottom: 36px;
+    }
+
+    .gatsby-resp-image-wrapper {
+      position: absolute !important;
+      z-index: -1;
+      width: 60%;
+      bottom: -28%;
+      right: -36%;
+
+      @media ${device.mobileL} {
+        width: 80%;
+        bottom: -64%;
+        right: -46%;
+      }
     }
 
     &::before {
@@ -100,9 +106,11 @@ const Content = styled.div`
       font-family: Arial, Helvetica, sans-serif;
       font-size: 4vw;
       font-weight: 600;
+
       @media ${device.mobileL} {
-        left: 8%;
-        font-size: 1.2vw;
+        left: 16%;
+        top: -14%;
+        font-size: 18px;
       }
     }
   }

@@ -3,7 +3,7 @@ title: 'Pin en vert'
 date: '2020-01-20'
 ---
 
-# Pin en Vert
+# Pin en Vert ![Logo](../../images/nos-cabanes/logo-pin_en_vert.jpg)
 
 Véritable nid d’amour forestier, Pin en vert est une cabane cocooning et douillette dans laquelle aiment se retrouver les couples en recherche d’un moment privilégié.
 

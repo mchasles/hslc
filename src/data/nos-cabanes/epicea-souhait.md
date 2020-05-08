@@ -3,7 +3,7 @@ title: 'Epicéa Souhait'
 date: '2020-01-20'
 ---
 
-# Epicéa Souhait
+# Epicéa Souhait ![Logo](../../images/nos-cabanes/logo-epicea_souhait.jpg)
 
 Bénéficiant d’un emplacement exceptionnel, suspendue au dessus de la falaise, Epicéa Souhait saura vous éblouir par son charme.
 

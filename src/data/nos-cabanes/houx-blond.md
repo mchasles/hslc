@@ -3,7 +3,7 @@ title: 'Houx Blond'
 date: '2020-01-20'
 ---
 
-# Houx Blond
+# Houx Blond ![Logo](../../images/nos-cabanes/logo-houx_blond.jpg)
 
 Initialement conçue comme un lieu d’habitation à long terme, Houx Blond est une cabane spacieuse dans laquelle l’accent est mis sur le confort : toilettes séparés, salle de bains séparés, lit de 180cm…
 

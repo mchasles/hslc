@@ -3,7 +3,7 @@ title: 'Des Chesnaies'
 date: '2020-01-20'
 ---
 
-# Des Chesnaies
+# Des Chesnaies ![Logo](../../images/nos-cabanes/logo-des_chesnaies.jpg)
 
 Des Chesnaies est une cabane double conçue pour les familles et les groupes.
 
