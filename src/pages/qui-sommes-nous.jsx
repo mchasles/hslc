@@ -9,7 +9,7 @@ import Medias from '../components/qui-sommes-nous/Medias';
 
 const Text = styled.span`
   margin-left: 30%;
-  margin-bottom: -4%;
+  margin-bottom: -8%;
 `;
 
 export default () => {

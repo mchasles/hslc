@@ -11,7 +11,7 @@ import Activities from '../components/infos-pratiques/Activities';
 
 const Text = styled.span`
   margin-left: 22%;
-  margin-bottom: -4%;
+  margin-bottom: -12%;
 `;
 
 export default () => {

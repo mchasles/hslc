@@ -25,7 +25,7 @@ const Title = styled.div`
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: calc(1.6vw + 1.2vh + 0.6vmin);
-    font-weight: 600;
+    font-weight: 100;
     letter-spacing: inherit;
   }
 `;

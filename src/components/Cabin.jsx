@@ -36,7 +36,7 @@ const Section = styled.section`
 
   @media ${device.mobileL} {
     flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
-    padding-top: 64px;
+
     margin-bottom: 0;
   }
 `;
