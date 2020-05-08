@@ -20,14 +20,25 @@ const Wrapper = styled(Section)`
     @media ${device.tablet} {
       float: left;
 
-      width: 56%;
+      width: 47%;
       margin: 0 0 32px auto;
 
       & + table {
-        width: 38%;
-        margin: 0 auto 0 6%;
+        margin: 0 auto 24px 6%;
+        & + h3 + table {
+          width: 56%;
+          & + table {
+            width: 38%;
+          }
+        }
       }
     }
+  }
+
+  h3 {
+    clear: both;
+    text-align: center;
+    margin: 12px 0;
   }
 
   p {
