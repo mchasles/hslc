@@ -1,14 +1,33 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-
+import styled from 'styled-components';
+import { device } from '../../utils/media';
 import Section from '../Section';
+
+const SectionIntroducing = styled(Section)`
+  @media ${device.laptop} {
+    & > h1 + p {
+      position: absolute;
+      left: 0;
+      width: 38%;
+      margin: 0;
+    }
+
+    p {
+      margin-left: 42%;
+    }
+  }
+`;
 
 const Introducing = () => {
   const data = useStaticQuery(query);
   const html = data.allMarkdownRemark.edges[0]?.node.html;
 
   return (
-    <Section id="presentation" dangerouslySetInnerHTML={{ __html: html }} />
+    <SectionIntroducing
+      id="presentation"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   );
 };
 

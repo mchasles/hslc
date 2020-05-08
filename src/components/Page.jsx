@@ -2,10 +2,12 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
+import { device } from '../utils/media';
 
 import Menu from './Menu';
 
 import fontFiles from '../fonts';
+
 import desChesnaies from '../images/nos-cabanes/logo-des_chesnaies.jpg';
 import epicea from '../images/nos-cabanes/logo-epicea_souhait.jpg';
 import houxBlond from '../images/nos-cabanes/logo-houx_blond.jpg';
@@ -51,9 +53,14 @@ const Wrapper = styled.div`
 `;
 
 const BgImg = styled.img`
-  position: absolute;
-  width: 12vw;
-  min-width: 100px;
+  display: none;
+
+  @media ${device.laptop} {
+    display: block;
+    position: absolute;
+    width: 12vw;
+    min-width: 100px;
+  }
 `;
 
 const Epicea = styled(BgImg)`

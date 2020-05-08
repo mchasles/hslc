@@ -5,6 +5,8 @@ date: '2020-01-20'
 
 # Présentation
 
+![Qui sommes nous ?](../../images/qui-sommes-nous.jpg)
+
 Nous, c’est beaucoup.
 
 C’est deux, ou quatre (ou sept en comptant les doudous), et c’est bien plus si on compte tout.
