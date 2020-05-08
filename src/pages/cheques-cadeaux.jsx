@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import Page from '../components/Page';
 import Section from '../components/Section';
 
+const BuyButton = styled.div`
+  margin: 0 auto 24px auto;
+`;
+
 export default ({ data }) => {
   const html = data.allMarkdownRemark.edges[0]?.node.html;
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src =
+      'https://widgets.ke-booking.com/fr/owner/site/widget/but/js/Pbb531d60f3d422680253fea8/971/GC/ke-booking.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <Page>
       <Section id="contact" dangerouslySetInnerHTML={{ __html: html }} />
+
+      <BuyButton id="keb-but-frame971" />
     </Page>
   );
 };
