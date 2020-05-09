@@ -2,9 +2,10 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 
+import { getHtmlData } from '../../utils/data';
 import Section from '../Section';
 
-const Wrapper = styled(Section)`
+const SectionActivities = styled(Section)`
   padding-bottom: 64px;
 
   ul {
@@ -19,9 +20,14 @@ const Wrapper = styled(Section)`
 
 const Activities = () => {
   const data = useStaticQuery(query);
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
-  return <Wrapper id="activites" dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <SectionActivities
+      id="activites"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 };
 
 export default Activities;
@@ -31,11 +37,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: { fields: { slug: { eq: "/data/infos-pratiques/activites/" } } }
     ) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;

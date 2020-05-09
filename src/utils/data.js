@@ -4,3 +4,5 @@ export const getCabinData = data => ({
   html: data.allMarkdownRemark.edges[0]?.node.html,
   photos: data.photos.edges,
 });
+
+export const getHtmlData = data => data.allMarkdownRemark.edges[0]?.node.html;

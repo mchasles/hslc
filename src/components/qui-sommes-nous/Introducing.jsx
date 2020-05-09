@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { device } from '../../utils/media';
 import Section from '../Section';
+import { getHtmlData } from '../../utils/data';
 
 const SectionIntroducing = styled(Section)`
   @media ${device.laptop} {
@@ -21,7 +22,7 @@ const SectionIntroducing = styled(Section)`
 
 const Introducing = () => {
   const data = useStaticQuery(query);
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
   return (
     <SectionIntroducing
@@ -40,11 +41,7 @@ export const query = graphql`
         fields: { slug: { eq: "/data/qui-sommes-nous/presentation/" } }
       }
     ) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;

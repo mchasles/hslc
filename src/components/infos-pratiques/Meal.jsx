@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { device } from '../../utils/media';
 import Section from '../Section';
+import { getHtmlData } from '../../utils/data';
 
 const Wrapper = styled(Section)`
   table {
@@ -50,7 +51,7 @@ const Wrapper = styled(Section)`
 
 const Meal = () => {
   const data = useStaticQuery(query);
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
   return <Wrapper id="repas" dangerouslySetInnerHTML={{ __html: html }} />;
 };
@@ -62,11 +63,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: { fields: { slug: { eq: "/data/infos-pratiques/repas/" } } }
     ) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;

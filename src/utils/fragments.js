@@ -1,5 +1,15 @@
 import { graphql } from 'gatsby';
 
+export const htmlMarkdownRemark = graphql`
+  fragment HtmlContent on MarkdownRemarkConnection {
+    edges {
+      node {
+        html
+      }
+    }
+  }
+`;
+
 export const cabinContentFragment = graphql`
   fragment CabinContent on MarkdownRemarkConnection {
     edges {

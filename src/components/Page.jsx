@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
 import { device } from '../utils/media';
+import { getHtmlData } from '../utils/data';
 
 import Menu from './Menu';
 
@@ -147,7 +148,7 @@ const Page = ({ children, bgImgs = true }) => (
             )}
             <Footer
               dangerouslySetInnerHTML={{
-                __html: data.allMarkdownRemark.edges[0]?.node.html,
+                __html: getHtmlData(data),
               }}
             />
           </Wrapper>

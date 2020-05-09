@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Cabin from '../Cabin';
-import { getCabinData } from '../../utils/cabin';
+import { getCabinData } from '../../utils/data';
 
 const EpiceaSouhait = () => {
   const data = useStaticQuery(query);

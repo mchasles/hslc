@@ -4,13 +4,14 @@ import styled from 'styled-components';
 
 import Page from '../components/Page';
 import Section from '../components/Section';
+import { getHtmlData } from '../utils/data';
 
 const BuyButton = styled.div`
   margin: 0 auto 24px auto;
 `;
 
 export default ({ data }) => {
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -34,11 +35,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: { fields: { slug: { eq: "/data/cheques-cadeaux/" } } }
     ) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;

@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { device } from '../../utils/media';
 import Section from '../Section';
 import pinecone from '../../images/nos-cabanes/logo-pin_en_vert.jpg';
+import { getHtmlData } from '../../utils/data';
 
 const Wrapper = styled(Section)`
   position: relative;
@@ -85,7 +86,7 @@ const Pinecone = styled.img`
 
 const ToKnow = () => {
   const data = useStaticQuery(query);
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
   return (
     <Wrapper>
@@ -109,11 +110,7 @@ export const query = graphql`
         }
       }
     ) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;

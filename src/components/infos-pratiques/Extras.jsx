@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 
 import Section from '../Section';
+import { getHtmlData } from '../../utils/data';
 
 const SectionExtras = styled(Section)`
   .gatsby-resp-image-wrapper {
@@ -22,7 +23,7 @@ const SectionExtras = styled(Section)`
 
 const Extras = () => {
   const data = useStaticQuery(query);
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
   return (
     <SectionExtras
@@ -39,11 +40,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: { fields: { slug: { eq: "/data/infos-pratiques/supplements/" } } }
     ) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;

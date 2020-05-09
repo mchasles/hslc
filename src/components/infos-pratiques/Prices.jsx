@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Section from '../Section';
+import { getHtmlData } from '../../utils/data';
 
 const Wrapper = styled(Section)`
   th + th,
@@ -13,7 +14,7 @@ const Wrapper = styled(Section)`
 
 const Prices = () => {
   const data = useStaticQuery(query);
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
   return <Wrapper id="tarifs" dangerouslySetInnerHTML={{ __html: html }} />;
 };
@@ -25,11 +26,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: { fields: { slug: { eq: "/data/infos-pratiques/tarifs/" } } }
     ) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;

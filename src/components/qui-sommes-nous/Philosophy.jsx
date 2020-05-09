@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { device } from '../../utils/media';
 import Section from '../Section';
+import { getHtmlData } from '../../utils/data';
 
 const Wrapper = styled(Section)`
   display: flex;
@@ -37,7 +38,7 @@ const Wrapper = styled(Section)`
 
 const Philosophy = () => {
   const data = useStaticQuery(query);
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
   return (
     <Wrapper
@@ -58,11 +59,7 @@ export const query = graphql`
         }
       }
     ) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Page from '../components/Page';
 import Section from '../components/Section';
+import { getHtmlData } from '../utils/data';
 
 const SectionContact = styled(Section)`
   display: flex;
@@ -28,7 +29,7 @@ const SectionContact = styled(Section)`
 `;
 
 export default ({ data }) => {
-  const html = data.allMarkdownRemark.edges[0]?.node.html;
+  const html = getHtmlData(data);
 
   return (
     <Page>
@@ -40,11 +41,7 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allMarkdownRemark(filter: { fields: { slug: { eq: "/data/contact/" } } }) {
-      edges {
-        node {
-          html
-        }
-      }
+      ...HtmlContent
     }
   }
 `;
